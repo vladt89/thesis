@@ -1,0 +1,20 @@
+\BOOKMARK [0][-]{chapter*.2}{List of abbreviations}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Introduction to load balancing and RAID controllers}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Load balancing}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{RAID}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.3}{SCSI RAID controllers}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.4}{SCSI WRITE and WRITE SAME commands}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.3}{Mathematical problem definition}{}% 8
+\BOOKMARK [1][-]{section.3.1}{Model of the SCSI controller communication with the disks}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.2}{Mathematical problem definition}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.3}{Technical limitations}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.4}{Theoretical estimations}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Application of load balancing strategies to the HP Smart Array 642}{}% 13
+\BOOKMARK [1][-]{section.4.1}{HP Smart Array 642}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{Load balancing strategies}{chapter.4}% 15
+\BOOKMARK [0][-]{chapter.5}{Experiments and results}{}% 16
+\BOOKMARK [1][-]{section.5.1}{Experiments with WRITE SAME 10 command}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.2}{Experiments with WRITE 10 command}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.3}{Analysis of the results}{chapter.5}% 19
+\BOOKMARK [0][-]{section*.26}{Bibliography}{}% 20

@@ -1,0 +1,27 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{ATA}]\begingroup Serial ATA (AT Attachment)\nomeqref {2.0}
+		\nompageref{3}
+  \item [{HP}]\begingroup Hewlett Packard\nomeqref {4.0}\nompageref{19}
+  \item [{IDE}]\begingroup Integrated Drive Electronics\nomeqref {2.0}
+		\nompageref{3}
+  \item [{IT}]\begingroup Information Technology\nomeqref {1.0}
+		\nompageref{1}
+  \item [{JBOD}]\begingroup Just a Bunch of Disks\nomeqref {2.0}
+		\nompageref{3}
+  \item [{RAID}]\begingroup Redundant Array of Independent Disks\nomeqref {2.0}
+		\nompageref{3}
+  \item [{SAS}]\begingroup Serial attached SCSI\nomeqref {2.0}
+		\nompageref{3}
+  \item [{SCA}]\begingroup Single Connector Attachment\nomeqref {3.0}
+		\nompageref{11}
+  \item [{SCSI}]\begingroup Small Computer System Interface\nomeqref {1.0}
+		\nompageref{1}
+  \item [{SMART}]\begingroup Self-Monitoring, Analysis and Reporting Technology\nomeqref {2.0}
+		\nompageref{3}
+  \item [{VHDCI}]\begingroup Very-High-Density Cable Interconnect\nomeqref {4.0}
+		\nompageref{19}
+
+\end{thenomenclature}

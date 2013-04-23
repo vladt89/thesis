@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+
+\bibitem{increase_pci}
+{\em Techniques for Increasing PCI Performance}.
+\newblock Intel Corporation, 1999.
+
+\bibitem{hp_642_desc}
+{\em HP Smart Array 642 Controller}.
+\newblock Hewlett-Packard, 2009.
+
+\bibitem{which_raid}
+{\em Which RAID Level is Right for Me?}
+\newblock Adaptec, Inc., 2010.
+
+\bibitem{guide_dyn_bal}
+Ali~M. Alakeel.
+\newblock {\em A Guide to Dynamic Load Balancing in Distributed Computer
+  Systems}.
+\newblock IJCSNS International Journal of Computer Science and Network
+  Security, VOL.10 No.6, 2010.
+
+\bibitem{ultra320}
+Michael Arellano.
+\newblock {\em Ultra320 SCSI: New Technology - Still SCSI}.
+\newblock SCSI Trade Association, 2001.
+
+\bibitem{scsi3_bc}
+T10~Technical Committee.
+\newblock {\em Working Draft. Revision 35. Information technology - SCSI Block
+  Commands - 3 (SBC-3)}.
+\newblock Technical Committee of Accredited Standards Committee INCITS, 2012.
+
+\bibitem{ata_spec}
+T13~Technical Committee.
+\newblock {\em Working Draft. Revision 4c. AT Attachment 8 - ATA/ATAPI Command
+  Set (ATA8-ACS)}.
+\newblock American National Standard of Accredited Standards Committee INCITS,
+  2007.
+
+\bibitem{oper_sys_conc}
+Abraham Silberschatz;~James Peterson.
+\newblock {\em Operating System Concepts, 8th edition}.
+\newblock Addison-Wesley, 1982.
+
+\bibitem{book_of_scsi}
+Gary Field; Peter~M. Ridge.
+\newblock {\em The Book of SCSI, 2nd Edition}.
+\newblock Publishers Group West, 2000.
+
+\bibitem{cache_strategies}
+Ramakrishna Karedla; J. Spencer Love; Bradley~G. Wherry.
+\newblock {\em Caching Strategies to Improve Disk System Performance}.
+\newblock Computer, 1994.
+
+\bibitem{load_bal}
+B.~Litow; S.H. Hosseini; K. Vairavan;~G.S. Wollfe.
+\newblock {\em Performance Characteristics of a Load Balancing Algorithm}.
+\newblock Journal of Parallel and Distributed Computing, 1995.
+
+\bibitem{cache_alg}
+Andrew S. Tanenbaum; Albert~S. Woodhull.
+\newblock {\em Operating Systems: Design and Implementation (Third Edition)}.
+\newblock Pearson Education, Inc., 2006.
+
+\end{thebibliography}
