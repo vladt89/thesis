@@ -1,12 +1,21 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.4)  23 APR 2013 10:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.26)  27 APR 2013 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **my_thesis.tex
 (./my_thesis.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, bu
-lgarian, ukrainian, russian, loaded.
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, et
+hiopic, farsi, arabic, pinyin, croatian, bulgarian, ukrainian, russian, slovak,
+ czech, danish, dutch, usenglishmax, ukenglish, finnish, french, basque, ngerma
+n, german, swissgerman, ngerman-x-2012-05-30, german-x-2012-05-30, monogreek, g
+reek, ibycus, ancientgreek, hungarian, bengali, tamil, hindi, telugu, gujarati,
+ sanskrit, malayalam, kannada, assamese, marathi, oriya, panjabi, italian, lati
+n, latvian, lithuanian, mongolian, mongolianlmc, nynorsk, bokmal, indonesian, e
+speranto, coptic, welsh, irish, interlingua, serbian, serbianc, slovenian, friu
+lan, romansh, estonian, romanian, armenian, uppersorbian, turkish, afrikaans, i
+celandic, kurmanji, polish, portuguese, galician, catalan, spanish, swedish, th
+ai, loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -711,14 +720,14 @@ File: ./img/raid1.png Graphic file (type png)
 <use ./img/raid1.png>
 Package pdftex.def Info: ./img/raid1.png used on input line 44.
 (pdftex.def)             Requested size: 370.49881pt x 244.69745pt.
- <./img/raid5.png, id=167, 659.46375pt x 300.12125pt>
+ <./img/raid5.png, id=168, 659.46375pt x 300.12125pt>
 File: ./img/raid5.png Graphic file (type png)
 
 <use ./img/raid5.png>
 Package pdftex.def Info: ./img/raid5.png used on input line 53.
 (pdftex.def)             Requested size: 370.49881pt x 168.61629pt.
  [6 <./img/raid1.png>]
-<./img/3ware_RAID.png, id=174, 649.42625pt x 411.5375pt>
+<./img/3ware_RAID.png, id=176, 649.42625pt x 411.5375pt>
 File: ./img/3ware_RAID.png Graphic file (type png)
 
 <use ./img/3ware_RAID.png>
@@ -728,28 +737,24 @@ Package pdftex.def Info: ./img/3ware_RAID.png used on input line 67.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./img/scsi.png, id=178, 401.5pt x 299.1175pt>
+<./img/scsi.png, id=180, 401.5pt x 299.1175pt>
 File: ./img/scsi.png Graphic file (type png)
  <use ./img/scsi.png>
 Package pdftex.def Info: ./img/scsi.png used on input line 83.
 (pdftex.def)             Requested size: 234.00238pt x 174.33719pt.
 Package epstopdf Info: Source file: <./img/sata_ide_disks.eps>
-(epstopdf)                    date: 2013-04-20 08:24:10
+(epstopdf)                    date: 2013-04-27 16:53:45
 (epstopdf)                    size: 1159394 bytes
 (epstopdf)             Output file: <./img/sata_ide_disks-eps-converted-to.pdf>
 
+(epstopdf)                    date: 2013-04-27 16:53:45
+(epstopdf)                    size: 64725 bytes
 (epstopdf)             Command: <repstopdf --outfile=./img/sata_ide_disks-eps-c
 onverted-to.pdf ./img/sata_ide_disks.eps>
 (epstopdf)             \includegraphics on input line 87.
-runsystem(repstopdf --outfile=./img/sata_ide_disks-eps-converted-to.pdf ./img/s
-ata_ide_disks.eps)...executed safely (allowed).
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <./img/sata_ide_disks-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2013-04-23 10:41:01
-(epstopdf)                    size: 64725 bytes.
-
-<./img/sata_ide_disks-eps-converted-to.pdf, id=179, 562.1pt x 340.27126pt>
+<./img/sata_ide_disks-eps-converted-to.pdf, id=181, 562.1pt x 340.27126pt>
 File: ./img/sata_ide_disks-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./img/sata_ide_disks-eps-converted-to.pdf>
@@ -766,7 +771,7 @@ Overfull \hbox (14.76022pt too wide) in paragraph at lines 95--95
 []\T1/cmr/bx/n/17.28 SCSI WRITE and WRITE SAME com-mands 
  []
 
-<./img/write_10.png, id=197, 844.15375pt x 371.3875pt>
+<./img/write_10.png, id=199, 844.15375pt x 371.3875pt>
 File: ./img/write_10.png Graphic file (type png)
 
 <use ./img/write_10.png>
@@ -784,7 +789,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 Chapter 3.
 [12
 
-] <./img/conn_model.png, id=230, 803.0pt x 293.095pt>
+] <./img/conn_model.png, id=232, 803.0pt x 293.095pt>
 File: ./img/conn_model.png Graphic file (type png)
 
 <use ./img/conn_model.png>
@@ -793,19 +798,16 @@ Package pdftex.def Info: ./img/conn_model.png used on input line 12.
  [13 <./img/conn_model.png>] [14] [15] [16] [17]
 [18] [19]
 Package epstopdf Info: Source file: <./img/SCA_conn.eps>
-(epstopdf)                    date: 2013-04-20 08:24:10
+(epstopdf)                    date: 2013-04-27 16:53:45
 (epstopdf)                    size: 2110794 bytes
 (epstopdf)             Output file: <./img/SCA_conn-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-04-27 16:53:45
+(epstopdf)                    size: 128967 bytes
 (epstopdf)             Command: <repstopdf --outfile=./img/SCA_conn-eps-convert
 ed-to.pdf ./img/SCA_conn.eps>
 (epstopdf)             \includegraphics on input line 152.
-runsystem(repstopdf --outfile=./img/SCA_conn-eps-converted-to.pdf ./img/SCA_con
-n.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <./img/SCA_conn-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-04-23 10:41:02
-(epstopdf)                    size: 128967 bytes.
- <./img/SCA_conn-eps-converted-to.pdf, id=291, 578.16pt x 313.17pt>
+Package epstopdf Info: Output file is already uptodate.
+ <./img/SCA_conn-eps-converted-to.pdf, id=293, 578.16pt x 313.17pt>
 File: ./img/SCA_conn-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./img/SCA_conn-eps-converted-to.pdf>
@@ -823,18 +825,18 @@ Chapter 4.
 
 ]
 Package epstopdf Info: Source file: <./img/HP_Smart_Array_642.eps>
-(epstopdf)                    date: 2013-04-20 08:24:10
+(epstopdf)                    date: 2013-04-27 16:53:45
 (epstopdf)                    size: 891770 bytes
 (epstopdf)             Output file: <./img/HP_Smart_Array_642-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2013-04-23 10:39:46
+(epstopdf)                    date: 2013-04-27 16:53:45
 (epstopdf)                    size: 40480 bytes
 (epstopdf)             Command: <repstopdf --outfile=./img/HP_Smart_Array_642-e
 ps-converted-to.pdf ./img/HP_Smart_Array_642.eps>
 (epstopdf)             \includegraphics on input line 15.
 Package epstopdf Info: Output file is already uptodate.
 
-<./img/HP_Smart_Array_642-eps-converted-to.pdf, id=350, 451.6875pt x 325.215pt>
+<./img/HP_Smart_Array_642-eps-converted-to.pdf, id=354, 451.6875pt x 325.215pt>
 File: ./img/HP_Smart_Array_642-eps-converted-to.pdf Graphic file (type pdf)
 <use ./img/HP_Smart_Array_642-eps-converted-to.pdf>
 Package pdftex.def Info: ./img/HP_Smart_Array_642-eps-converted-to.pdf used on 
@@ -846,133 +848,152 @@ Chapter 5.
 [31
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
 []|\T1/cmr/m/n/12 Average
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
 []|\T1/cmr/m/n/12 Average
  []
 
-<./img/logic1.png, id=381, 482.80376pt x 369.38pt>
+<./img/logic1.png, id=385, 482.80376pt x 369.38pt>
 File: ./img/logic1.png Graphic file (type png)
  <use ./img/logic1.png>
-Package pdftex.def Info: ./img/logic1.png used on input line 37.
+Package pdftex.def Info: ./img/logic1.png used on input line 32.
 (pdftex.def)             Requested size: 253.49762pt x 193.9443pt.
 
 [32 <./img/logic1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\T1/cmr/m/n/12 Average
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\T1/cmr/m/n/12 Average
  []
 
-<./img/logic2.png, id=392, 467.7475pt x 374.39874pt>
+<./img/logic2.png, id=396, 467.7475pt x 374.39874pt>
 File: ./img/logic2.png Graphic file (type png)
  <use ./img/logic2.png>
-Package pdftex.def Info: ./img/logic2.png used on input line 69.
+Package pdftex.def Info: ./img/logic2.png used on input line 63.
 (pdftex.def)             Requested size: 253.49762pt x 202.90927pt.
 
 [33 <./img/logic2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
 []|\T1/cmr/m/n/12 Average
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
 []|\T1/cmr/m/n/12 Average
  []
 
-[34] <./img/logic3.png, id=407, 472.76625pt x 372.39125pt>
+[34] <./img/logic3.png, id=411, 472.76625pt x 372.39125pt>
 File: ./img/logic3.png Graphic file (type png)
 
 <use ./img/logic3.png>
-Package pdftex.def Info: ./img/logic3.png used on input line 112.
+Package pdftex.def Info: ./img/logic3.png used on input line 106.
 (pdftex.def)             Requested size: 253.49762pt x 199.67908pt.
  [35 <./img/logic3.png>] [36]
-<./img/compare_logic3.png, id=424, 469.755pt x 371.3875pt>
+<./img/compare_logic3.png, id=428, 469.755pt x 371.3875pt>
 File: ./img/compare_logic3.png Graphic file (type png)
 
 <use ./img/compare_logic3.png>
-Package pdftex.def Info: ./img/compare_logic3.png used on input line 154.
+Package pdftex.def Info: ./img/compare_logic3.png used on input line 147.
 (pdftex.def)             Requested size: 253.49762pt x 200.41591pt.
- [37 <./img/compare_logic3.png>] [38]
-<./img/compare_write_10_14disks.png, id=441, 469.755pt x 374.39874pt>
+
+<./img/better_res_WS.png, id=430, 480.79625pt x 366.36874pt>
+File: ./img/better_res_WS.png Graphic file (type png)
+
+<use ./img/better_res_WS.png>
+Package pdftex.def Info: ./img/better_res_WS.png used on input line 156.
+(pdftex.def)             Requested size: 253.49762pt x 193.16824pt.
+ [37 <./img/compare_logic3.png> <./img/better_res_WS.png>] [38]
+<./img/compare_write_10_14disks.png, id=446, 469.755pt x 374.39874pt>
 File: ./img/compare_write_10_14disks.png Graphic file (type png)
 
 <use ./img/compare_write_10_14disks.png>
 Package pdftex.def Info: ./img/compare_write_10_14disks.png used on input line 
-205.
+200.
 (pdftex.def)             Requested size: 253.49762pt x 202.04091pt.
 
-<./img/aver_compl_6-14.png, id=442, 479.7925pt x 371.3875pt>
+<./img/aver_compl_6-14.png, id=447, 479.7925pt x 371.3875pt>
 File: ./img/aver_compl_6-14.png Graphic file (type png)
 
 <use ./img/aver_compl_6-14.png>
-Package pdftex.def Info: ./img/aver_compl_6-14.png used on input line 214.
+Package pdftex.def Info: ./img/aver_compl_6-14.png used on input line 209.
 (pdftex.def)             Requested size: 253.49762pt x 196.2224pt.
  [39 <./img/compare_write_10_14disks.png> <./img/aver_compl_6-14.png>]
-<./img/diff_transfer_length_diskF.png, id=450, 466.74374pt x 375.4025pt>
+<./img/diff_transfer_length_diskF.png, id=455, 466.74374pt x 375.4025pt>
 File: ./img/diff_transfer_length_diskF.png Graphic file (type png)
 
 <use ./img/diff_transfer_length_diskF.png>
 Package pdftex.def Info: ./img/diff_transfer_length_diskF.png used on input lin
-e 225.
+e 220.
 (pdftex.def)             Requested size: 253.49762pt x 203.8886pt.
 
-<./img/diff_length_14disks.png, id=451, 469.755pt x 377.41pt>
+<./img/diff_length_14disks.png, id=456, 466.74374pt x 370.38374pt>
 File: ./img/diff_length_14disks.png Graphic file (type png)
 
 <use ./img/diff_length_14disks.png>
-Package pdftex.def Info: ./img/diff_length_14disks.png used on input line 234.
-(pdftex.def)             Requested size: 253.49762pt x 203.66591pt.
- [40 <./img/diff_transfer_length_diskF.png> <./img/diff_length_14disks.png>] [4
-1]) [42] (./my_thesis.bbl [43
+Package pdftex.def Info: ./img/diff_length_14disks.png used on input line 229.
+(pdftex.def)             Requested size: 253.49762pt x 201.16281pt.
+ [40 <./img/diff_transfer_length_diskF.png> <./img/diff_length_14disks.png>]
+<./img/comp_256_512length.png, id=464, 459.7175pt x 370.38374pt>
+File: ./img/comp_256_512length.png Graphic file (type png)
+
+<use ./img/comp_256_512length.png>
+Package pdftex.def Info: ./img/comp_256_512length.png used on input line 240.
+(pdftex.def)             Requested size: 253.49762pt x 204.24294pt.
+
+<./img/comp_disk_repl_W10.png, id=465, 457.71pt x 372.39125pt>
+File: ./img/comp_disk_repl_W10.png Graphic file (type png)
+
+<use ./img/comp_disk_repl_W10.png>
+Package pdftex.def Info: ./img/comp_disk_repl_W10.png used on input line 249.
+(pdftex.def)             Requested size: 253.49762pt x 206.24205pt.
+ [41 <./img/comp_256_512length.png> <./img/comp_disk_repl_W10.png>] [42]) [43] 
+(./my_thesis.bbl [44
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
- [44]
+ [45]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
-
-(./my_thesis.aux)
+ (./my_thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `my_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A51AF44D6A38BEAD03364543EC48B381;1415.
-
+(rerunfilecheck)             Checksum: 0756C6C9B47D8F5057702E5201D3ACDC;1407.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 9125 strings out of 494816
- 133040 string characters out of 3177879
- 228265 words of memory out of 3000000
- 12013 multiletter control sequences out of 15000+200000
+ 9151 strings out of 493485
+ 133675 string characters out of 3143526
+ 229633 words of memory out of 3000000
+ 12147 multiletter control sequences out of 15000+200000
  13904 words of font info for 35 fonts, out of 3000000 for 9000
- 198 hyphenation exceptions out of 8191
+ 957 hyphenation exceptions out of 8191
  36i,11n,46p,1310b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/vladt89/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home
-/vladt89/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/vladt89/
-.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/vladt89/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/vladt89/.texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecbx1200.600pk> </home/vladt89/.texmf-var/fonts/pk/ljfour/
-jknappen/ec/ecrm1200.600pk> </home/vladt89/.texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecbx2488.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on my_thesis.pdf (49 pages, 1285002 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfti1200.pfb>
+Output written on my_thesis.pdf (50 pages, 1339294 bytes).
 PDF statistics:
- 846 PDF objects out of 1000 (max. 8388607)
- 470 compressed objects within 5 object streams
- 132 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 574 PDF objects out of 1000 (max. 8388607)
+ 478 compressed objects within 5 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

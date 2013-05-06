@@ -1,17 +1,14 @@
 \chapter{Experiments and results}
 \label{chap5:title}
 
-%In this chapter we present the tables and graphics of the results. 
+In this chapter we present the test results of the application, which sends WRITE 10 and WRITE SAME 10 commands with different parameters. We made all the tests with WRITE 10 command, when the disks were connected with the enclosure to the controller. But some tests with WRITE SAME 10 command were done with the backplane. Mostly we are interested in decreasing the time of complete erasure, but sometimes, because of the different speed of the disks, the results started to be useless and strange, that is why we started to calculate also the time of erasure for single disks. 
 
-\section{Experiments with WRITE SAME 10 command}
-
-In this part of the research we will present the results of 3 strategies that we considered before. The tests for the first and second strategies were done with 5 disks, connected with the backplane to the internal port of the HP Smart Array 642 controller.
-The third strategy was testing with 14 disks, connected with the enclosure to the external port of the controller. Firstly, we computed only the complete erasure, but later we noticed that different speed of the disk make our tests completely useless, that is why we started to calculate the time of erasure for single disks. 
+\section{Results with WRITE SAME 10 command}
+Using WRITE SAME 10 command we tested 3 different strategies that we considered before. The tests for the first and second strategies were done with 5 disks, connected with the backplane to the internal port of the HP Smart Array 642 controller. The third strategy was testing with 14 disks, connected with the enclosure to the external port of the controller. 
 
 \newpage 
 %\subsection{First strategy}
 During testing erasure with first strategy we got the results presented in the Table \ref{tbl:tbl_logic1}. 
-
 
 \begin{table}[h!]
   \caption{Results for complete erasure by first strategy}
@@ -29,9 +26,7 @@ During testing erasure with first strategy we got the results presented in the T
   \label{tbl:tbl_logic1}
   \end{center}
 \end{table}
-
 Figure \ref{fig:logic1} presents the results from the Table \ref{tbl:tbl_logic1} more clearly.
-
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{logic1}
@@ -39,7 +34,6 @@ Figure \ref{fig:logic1} presents the results from the Table \ref{tbl:tbl_logic1}
   \caption{Time results for complete erasure by first strategy}
   \label{fig:logic1}
 \end{figure}
-
 
 \newpage
 
@@ -148,7 +142,6 @@ During testing erasure for single disks with third strategy we got the results p
 
 \newpage
 Figure \ref{fig:compare_logic3} presents the results from the Table \ref{tbl:tbl_logic3_2} more clearly.
-
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{compare_logic3}
@@ -157,19 +150,22 @@ Figure \ref{fig:compare_logic3} presents the results from the Table \ref{tbl:tbl
   \label{fig:compare_logic3}
 \end{figure}
 
-Figure \ref{fig:compare_logic3} shows that the difference is very low between the times of erasure for single disk and for single disk during complete erasure. That means that the bus is not a bottleneck in this situation and only rotation speed is a limiting factor.
+By replacing disks 4,5 and 11 we even can improve our results, which are shown on the Figure \ref{fig:better_res_WS}.
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.65\textwidth]{better_res_WS}
+\end{center}
+  \caption{Time results for single erasure by third strategy}
+  \label{fig:better_res_WS}
+\end{figure}
 
 
 
-
-\section{Experiments with WRITE 10 command}
-
-During research with WRITE SAME 10 command we understood that the parallel strategy works fine with that
-controller that is why experiments with WRITE 10 command were done only with third strategy. Several tests were done with WRITE 10 command with transfer length 256, which is not the maximum, but seems to be optimal. Later the graphics shows is this transfer length really optimal or not.
 
 \newpage
-During testing erasure for single disks with third strategy we got the results presented in the Table \ref{tbl:tbl_write_10_01}. Moreover, in the Table \ref{tbl:tbl_write_10_01} we present the time of erasure for single disk during complete erasure. 
-
+\section{Results with WRITE 10 command}
+During research with WRITE SAME 10 command we understood that the parallel strategy works fine with that
+controller that is why experiments with WRITE 10 command were done only with the third strategy. Several tests were done with WRITE 10 command with transfer length 256, which is not the maximum, but seems to be optimal. During testing erasure for single disks with third strategy we got the results presented in the Table \ref{tbl:tbl_write_10_01}.
 \begin{table}[h!]
   \caption{Results for erasure of single disks by third strategy}
   \begin{center}
@@ -196,7 +192,6 @@ During testing erasure for single disks with third strategy we got the results p
   \end{center}
 \end{table}
 
-\newpage
 \newpage
 Figure \ref{fig:compare_write_10_14disks} presents the results from the Table \ref{tbl:tbl_write_10_01} more clearly.
 
@@ -237,17 +232,37 @@ Figure \ref{fig:diff_transfer_length_diskF} presents the time results for the di
   \label{fig:diff_length_14disks}
 \end{figure}
 
+
+\newpage
+Figure \ref{fig:comp_256_512length} presents the time results of complete erasure with transfer length 256 and 512.
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.65\textwidth]{comp_256_512length}
+\end{center}
+  \caption{Results for complete erasure depending on the transfer length}
+  \label{fig:comp_256_512length}
+\end{figure}
+
+%On the Figure \ref{fig:comp_disk_repl_W10} we can notice the differences between the times for the erasure after replacement some of the disks.
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.65\textwidth]{comp_disk_repl_W10}
+\end{center}
+  \caption{Results after replacement of the disks 4,5 and 11.}
+  \label{fig:comp_disk_repl_W10}
+\end{figure}
+
+
+
 \newpage
 \section{Analysis of the results}
 
 After testing with WRITE SAME 10 command we can notice that the second strategy is working slower than the first one, which is obvious because it needs to change the devices quite often. The third strategy works without any problems, but the results of several disks are quite different, which gives an idea that we did not consider all the parameters or it depends just on the hardware.
 
-We can see from the Figures \ref{fig:logic1} and \ref{fig:logic2} that the time of first and second strategies is increasing linearly. We could not say the same about the third strategy because the disks have different speed or some other parameters disturb disk work on the maximum speed. But we definitely can say that the bus is not a bottleneck for 14 disks, because the complete erasure time does not increase if we add more disks.
+We can see from the Figures \ref{fig:logic1} and \ref{fig:logic2} that the time of first and second strategies is increasing linearly. We could not say the same about the third strategy because the disks have different speed or some other parameters disturb disk work on the maximum speed. Figure \ref{fig:compare_logic3} shows that the difference is very low between the times of erasure for single disk and for single disk during complete erasure. That means that the bus is not a bottleneck in the situation, when we send WRITE SAME 10 command and 14 disks are connected to the controller, and only rotation speed of the disks is a limiting factor. This fact is proved one more time by the Figure \ref{fig:better_res_WS}, where we show the results of erasure time for single disk during complete erasure after replacement of 3 slow disks. The results shows that the time of complete erasure decreased from 11 to 10 minutes. But still it is strange that the difference of the time of erasure for several disks can be even 4 minutes, which is almost half time of the complete erasure, but the disk parameters are completely the same.
 
 The testing results do not depend on the application running and the erasure time is not divided randomly to different disks. Table \ref{tbl:tbl_write_10_01} proved this fact by results from the same test running several times, which gave the whole difference with -13 seconds for erasure of 14 disks by WRITE 10 command. That means that even for erasure of the fastest disk 13 seconds will take only 0.01 of whole erasure. That is why we could ignore this difference. 
 
-We can notice that during complete erasure by WRITE SAME 10 command disks 2, 4 and 5 showed the worst time. In the same time during complete erasure by WRITE 10 command disks 6 and 8 showed the worst time. That gives an idea that there are some other parameters that also depending on the time of erasure.
+We can notice that during complete erasure by WRITE SAME 10 command disks 2, 4 and 5 showed the worst time. In the same time during complete erasure by WRITE 10 command disks 6 and 8 showed the worst time. That gives an idea that there are some other parameters that also depending on the time of erasure. Moreover, Figure \ref{fig:comp_disk_repl_W10} shows how changes the results after replacement disks 4,5 and 11. We can conclude that time for complete erasure decreased for 1 minute and the same disks show the maximum and minimum times. It is also strange that during single erasure by WRITE 10 command disks 1 and 14 were the fastest and during complete erasure their results are very closed to very slow ones.
 
-It is also strange that during single erasure by WRITE 10 command disks 1 and 14 were the fastest and during complete erasure their results are very closed to very slow ones.
-
-Figures \ref{fig:diff_transfer_length_diskF} and \ref{fig:diff_length_14disks} show the results of testing different transfer length, which is one of the parameters that we can influence. To summarize these results we can say that for 14 disks transfer length 256 is definitely the optimal value, but it is not correct for 1 disk. Using the value 2048 we could erase one disk much faster. That means that the special application for analysis could take care of understanding, which transfer length to take, for making the erasure faster.
+Figures \ref{fig:diff_transfer_length_diskF} and \ref{fig:diff_length_14disks} show the results of testing different transfer length, which is one of the parameters that we can influence. To summarize these results we can say that for 14 disks transfer length 256 is definitely the optimal value, but it is not correct for 1 disk. Using the value 2048 we could erase one disk much faster. That means that the load balancing application could help with analysis, which transfer length to take, for making the erasure faster.

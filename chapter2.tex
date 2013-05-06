@@ -47,7 +47,7 @@ capacity is half the number of available disks. RAID 1 provides cost-effective, 
   \label{fig:raid1}
 \end{figure}
 
-Another type RAID 5 uses data striping in a technique designed to provide fault-tolerant data storage, but doesn't require duplication of data like RAID 1. Data is striped across all of the drives in the array, but for each stripe through the array (one stripe unit from each disk) one stripe unit is reserved to hold parity data calculated from the other stripe units in the same stripe. Read performance is therefore very good, but there is a penalty for writes, since the parity data has to be recalculated and written along with the new data. RAID 5 requires a minimum of three disks and a maximum of 16 disks to be implemented. RAID 5 usable capacity is between 67\% - 97\% depending on the number of data drives in the RAID set.
+Another type RAID 5 uses data striping in a technique designed to provide fault-tolerant data storage, but doesn't require duplication of data like RAID 1 \cite{raid_overview}. Data is striped across all of the drives in the array, but for each stripe through the array (one stripe unit from each disk) one stripe unit is reserved to hold parity data calculated from the other stripe units in the same stripe. Read performance is therefore very good, but there is a penalty for writes, since the parity data has to be recalculated and written along with the new data. RAID 5 requires a minimum of three disks and a maximum of 16 disks to be implemented. RAID 5 usable capacity is between 67\% - 97\% depending on the number of data drives in the RAID set.
 \begin{figure}[h]
 \begin{center}
   \includegraphics[width=0.95\textwidth]{raid5}

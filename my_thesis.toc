@@ -16,7 +16,7 @@
 \contentsline {section}{\numberline {4.1}HP Smart Array 642}{27}{section.4.1}
 \contentsline {section}{\numberline {4.2}Load balancing strategies}{28}{section.4.2}
 \contentsline {chapter}{\numberline {5}Experiments and results}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Experiments with WRITE SAME 10 command}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Experiments with WRITE 10 command}{37}{section.5.2}
-\contentsline {section}{\numberline {5.3}Analysis of the results}{41}{section.5.3}
-\contentsline {chapter}{Bibliography}{43}{section*.26}
+\contentsline {section}{\numberline {5.1}Results with WRITE SAME 10 command}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Results with WRITE 10 command}{38}{section.5.2}
+\contentsline {section}{\numberline {5.3}Analysis of the results}{42}{section.5.3}
+\contentsline {chapter}{Bibliography}{44}{section*.29}

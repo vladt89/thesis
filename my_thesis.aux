@@ -30,6 +30,7 @@
 \citation{guide_dyn_bal}
 \citation{which_raid}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}RAID}{5}{section.2.2}}
+\citation{raid_overview}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Prototype of RAID 1\relax }}{6}{figure.caption.3}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:raid1}{{2.1}{6}{Prototype of RAID 1\relax \relax }{figure.caption.3}{}}
@@ -71,6 +72,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Technical limitations}{18}{section.3.3}}
 \citation{ultra320}
 \citation{increase_pci}
+\citation{intro_scsi_perform}
 \citation{cache_alg}
 \citation{cache_strategies}
 \newlabel{fig:SCA_conn}{{\caption@xref {fig:SCA_conn}{ on input line 151}}{21}{Technical limitations\relax }{figure.caption.9}{}}
@@ -95,7 +97,7 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chap5:title}{{5}{31}{Experiments and results\relax }{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiments with WRITE SAME 10 command}{31}{section.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Results with WRITE SAME 10 command}{31}{section.5.1}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Results for complete erasure by first strategy\relax }}{32}{table.caption.13}}
 \newlabel{tbl:tbl_logic1}{{5.1}{32}{Results for complete erasure by first strategy\relax \relax }{table.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Time results for complete erasure by first strategy\relax }}{32}{figure.caption.14}}
@@ -112,31 +114,39 @@
 \newlabel{tbl:tbl_logic3_2}{{5.4}{36}{Results for erasure of single disks by third strategy\relax \relax }{table.caption.19}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Time results for complete erasure by third strategy\relax }}{37}{figure.caption.20}}
 \newlabel{fig:compare_logic3}{{5.4}{37}{Time results for complete erasure by third strategy\relax \relax }{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Experiments with WRITE 10 command}{37}{section.5.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Results for erasure of single disks by third strategy\relax }}{38}{table.caption.21}}
-\newlabel{tbl:tbl_write_10_01}{{5.5}{38}{Results for erasure of single disks by third strategy\relax \relax }{table.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Time results for complete erasure by WRITE 10 command\relax }}{39}{figure.caption.22}}
-\newlabel{fig:compare_write_10_14disks}{{5.5}{39}{Time results for complete erasure by WRITE 10 command\relax \relax }{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Time results for average erasure and complete erasure\relax }}{39}{figure.caption.23}}
-\newlabel{fig:aver_compl_6-14}{{5.6}{39}{Time results for average erasure and complete erasure\relax \relax }{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Time results for the disk 1\relax }}{40}{figure.caption.24}}
-\newlabel{fig:diff_transfer_length_diskF}{{5.7}{40}{Time results for the disk 1\relax \relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Time results for average erasure and complete erasure depending on the transfer length\relax }}{40}{figure.caption.25}}
-\newlabel{fig:diff_length_14disks}{{5.8}{40}{Time results for average erasure and complete erasure depending on the transfer length\relax \relax }{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Analysis of the results}{41}{section.5.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Time results for single erasure by third strategy\relax }}{37}{figure.caption.21}}
+\newlabel{fig:better_res_WS}{{5.5}{37}{Time results for single erasure by third strategy\relax \relax }{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Results with WRITE 10 command}{38}{section.5.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Results for erasure of single disks by third strategy\relax }}{38}{table.caption.22}}
+\newlabel{tbl:tbl_write_10_01}{{5.5}{38}{Results for erasure of single disks by third strategy\relax \relax }{table.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Time results for complete erasure by WRITE 10 command\relax }}{39}{figure.caption.23}}
+\newlabel{fig:compare_write_10_14disks}{{5.6}{39}{Time results for complete erasure by WRITE 10 command\relax \relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Time results for average erasure and complete erasure\relax }}{39}{figure.caption.24}}
+\newlabel{fig:aver_compl_6-14}{{5.7}{39}{Time results for average erasure and complete erasure\relax \relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Time results for the disk 1\relax }}{40}{figure.caption.25}}
+\newlabel{fig:diff_transfer_length_diskF}{{5.8}{40}{Time results for the disk 1\relax \relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Time results for average erasure and complete erasure depending on the transfer length\relax }}{40}{figure.caption.26}}
+\newlabel{fig:diff_length_14disks}{{5.9}{40}{Time results for average erasure and complete erasure depending on the transfer length\relax \relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Results for complete erasure depending on the transfer length\relax }}{41}{figure.caption.27}}
+\newlabel{fig:comp_256_512length}{{5.10}{41}{Results for complete erasure depending on the transfer length\relax \relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Results after replacement of the disks 4,5 and 11.\relax }}{41}{figure.caption.28}}
+\newlabel{fig:comp_disk_repl_W10}{{5.11}{41}{Results after replacement of the disks 4,5 and 11.\relax \relax }{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Analysis of the results}{42}{section.5.3}}
 \citation{*}
 \bibdata{bibliography}
 \bibcite{increase_pci}{1}
-\bibcite{hp_642_desc}{2}
-\bibcite{which_raid}{3}
-\bibcite{guide_dyn_bal}{4}
-\bibcite{ultra320}{5}
-\bibcite{scsi3_bc}{6}
-\bibcite{ata_spec}{7}
-\bibcite{oper_sys_conc}{8}
-\bibcite{book_of_scsi}{9}
-\newlabel{bibliography}{{5.3}{43}{Analysis of the results\relax }{section*.26}{}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{43}{section*.26}}
-\bibcite{cache_strategies}{10}
-\bibcite{load_bal}{11}
-\bibcite{cache_alg}{12}
+\bibcite{raid_overview}{2}
+\bibcite{hp_642_desc}{3}
+\bibcite{which_raid}{4}
+\bibcite{guide_dyn_bal}{5}
+\bibcite{ultra320}{6}
+\bibcite{scsi3_bc}{7}
+\bibcite{ata_spec}{8}
+\bibcite{intro_scsi_perform}{9}
+\newlabel{bibliography}{{5.3}{44}{Analysis of the results\relax }{section*.29}{}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{44}{section*.29}}
+\bibcite{oper_sys_conc}{10}
+\bibcite{book_of_scsi}{11}
+\bibcite{cache_strategies}{12}
+\bibcite{load_bal}{13}
+\bibcite{cache_alg}{14}

@@ -4,6 +4,10 @@
 {\em Techniques for Increasing PCI Performance}.
 \newblock Intel Corporation, 1999.
 
+\bibitem{raid_overview}
+{\em RAID Technology Overview}.
+\newblock Hewlett-Packard Development Company, L.P., 2007.
+
 \bibitem{hp_642_desc}
 {\em HP Smart Array 642 Controller}.
 \newblock Hewlett-Packard, 2009.
@@ -36,6 +40,11 @@ T13~Technical Committee.
   Set (ATA8-ACS)}.
 \newblock American National Standard of Accredited Standards Committee INCITS,
   2007.
+
+\bibitem{intro_scsi_perform}
+Carlo Kopp.
+\newblock {\em An Introduction to SCSI Disk Performance}.
+\newblock Dr Carlo Kopp's Industry Publications, 2005.
 
 \bibitem{oper_sys_conc}
 Abraham Silberschatz;~James Peterson.
