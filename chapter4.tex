@@ -56,3 +56,21 @@ For the second strategy the dimension of matrix $H$ is $5\times2910$. Value $291
 
 The third strategy is using parallel computing, which makes the process for complete erasure much faster. The application creates separate thread for each disk and start sending WRITE SAME commands to that disk. It is obvious that during increasing the amount of disks the value of functional of time will increase too, but slowly, because threads are working completely separately. But important limitations are the speeds of the disk and the bus. As we can see from Figure \ref{fig:conn_model} separate buses $c$ give the possibility to send data from the controller $b$ to the disks $d$. In our situation, only one bus $c$ exists, which is connected to the enclosure containing several disks. If we write information in parallel to several disks the bus speed can be the limitation for data transfer. The maximum speed of the current bus is 320 MB/s. In this case it id difficult to present matrix $H$, because we do not know in which order WRITE SAME commands come to the disks.
 
+
+\section{Planning dynamic load balancing system}
+
+During whole research we try to find the optimal parameters for sending write commands to the disks, but it seems that we could not say anything before some testing. As it was mentioned in the beginning of the paper load balancing system should take care of these things. Lets discuss what kind of static and dynamic load balancing systems we could provide for our situation. There are so many parameters which depend on the speed of erasure that it is much better to use dynamic load balancing system. But it is also possible to apply static load balancing system using some special conditions.
+
+Main condition that should be fulfilled is knowledge about the cache of the controller. If we know this parameter before the erasure process it is possible to calculate the optimal buffer and optimal number of disks for erasure. The problem is that getting cache from the controller is very specific task and sometimes maybe even impossible one. But using Linux driver we can manually find the maximum value for the transfer buffer. In our situation this value is defined as $MAX\_KMALLOC\_SIZE (4096*512)$, which means that the maximum buffer can not be larger than 2 MB. We do not know exactly if it is cache, but the value looks quite similar to the cache size. If we consider this value as cache we easily can calculate what is the optimal value for the transfer length using 14 disks:
+\begin{equation}
+	\frac{MAX\_BUFFER}{SECTOR\_SIZE*14} = \frac{4096*512}{512*14} = 292.57.
+\end{equation}
+In our case we send the buffer with the value of power of 2, that is why 256 is the optimal value, as we can see it also from the result graphic \ref{fig:diff_length_14disks}. And Blancco software sends the buffer exactly with the transfer length 256, but it is optimal when the number of disks is more than 8. Lets calculate the transfer length in case that we have 8 disks:
+\begin{equation}
+	\frac{MAX\_BUFFER}{SECTOR\_SIZE*14} = \frac{4096*512}{512*8} = 512.
+\end{equation}
+This fact explains that we should use another transfer length to get an optimal way of sending commands. Moreover, we understand that for 4 disks we need 1024 and for 2 disks - 2048, but it is only theory. In practise, sometimes the results of testing show that some other parameters influence on speed too.
+
+
+
+
