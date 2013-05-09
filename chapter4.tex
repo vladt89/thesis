@@ -69,7 +69,9 @@ In our case we send the buffer with the value of power of 2, that is why 256 is 
 \begin{equation}
 	\frac{MAX\_BUFFER}{SECTOR\_SIZE*14} = \frac{4096*512}{512*8} = 512.
 \end{equation}
-This fact explains that we should use another transfer length to get an optimal way of sending commands. Moreover, we understand that for 4 disks we need 1024 and for 2 disks - 2048, but it is only theory. In practise, sometimes the results of testing show that some other parameters influence on speed too.
+This fact explains that we should use another transfer length to get an optimal way of sending commands. Moreover, we understand that for 4 disks we need 1024 and for 2 disks - 2048. We proved this theory by making several tests. The Figure \ref{fig:comp_256_best_length} shows that based on our theory Blancco software sends the optimal buffer only for disks 9-14. If we have less than 9 disks in the enclosure, we can erase them faster using another transfer length.
+
+Based on our theory if we have 9 disks and transfer length is 512, the buffer will exceed the limit of 2 MB and the erasure process should go slower than with transfer length 256. But in practise, the results of testing show that even for disks 9-14 the buffer with transfer length 512 allows to erase the devices faster than with transfer length 256. The Figure \ref{fig:comp_256_best2_length} explains it more clear. It means that some other parameters, that we did not include, influence on the speed or our theory has a mistake.
 
 
 

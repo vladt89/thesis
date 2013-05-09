@@ -61,6 +61,12 @@ Ramakrishna Karedla; J. Spencer Love; Bradley~G. Wherry.
 \newblock {\em Caching Strategies to Improve Disk System Performance}.
 \newblock Computer, 1994.
 
+\bibitem{perf_dlba}
+Roy Williams.
+\newblock Performance of dynamic load balancing algorithms for unstructured
+  mesh calculations.
+\newblock {\em Concurrency}, 3:457--481, 1991.
+
 \bibitem{load_bal}
 B.~Litow; S.H. Hosseini; K. Vairavan;~G.S. Wollfe.
 \newblock {\em Performance Characteristics of a Load Balancing Algorithm}.

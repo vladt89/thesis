@@ -19,5 +19,5 @@
 \contentsline {chapter}{\numberline {5}Experiments and results}{33}{chapter.5}
 \contentsline {section}{\numberline {5.1}Results with WRITE SAME 10 command}{33}{section.5.1}
 \contentsline {section}{\numberline {5.2}Results with WRITE 10 command}{40}{section.5.2}
-\contentsline {section}{\numberline {5.3}Analysis of the results}{44}{section.5.3}
-\contentsline {chapter}{Bibliography}{46}{section*.29}
+\contentsline {section}{\numberline {5.3}Analysis of the results}{45}{section.5.3}
+\contentsline {chapter}{Bibliography}{47}{section*.31}
