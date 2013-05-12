@@ -150,7 +150,7 @@ Figure \ref{fig:compare_logic3} presents the results from the Table \ref{tbl:tbl
   \label{fig:compare_logic3}
 \end{figure}
 
-By replacing disks 4,5 and 11 we even can improve our results, which are shown on the Figure \ref{fig:better_res_WS}.
+By replacing disks 4,5 and 11 we got different results for single disks during complete erasure, which are shown on the Figure \ref{fig:better_res_WS}.
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{better_res_WS}
@@ -165,7 +165,7 @@ By replacing disks 4,5 and 11 we even can improve our results, which are shown o
 \newpage
 \section{Results with WRITE 10 command}
 During research with WRITE SAME 10 command we understood that the parallel strategy works fine with that
-controller that is why experiments with WRITE 10 command were done only with the third strategy. Several tests were done with WRITE 10 command with transfer length 256, which is not the maximum, but seems to be optimal. During testing erasure for single disks with third strategy we got the results presented in the Table \ref{tbl:tbl_write_10_01}.
+controller that is why experiments with WRITE 10 command were done only with the third strategy. Several tests were done with WRITE 10 command with transfer length 256. During testing erasure for single disks with third strategy we got the results presented in the Table \ref{tbl:tbl_write_10_01}.
 \begin{table}[h!]
   \caption{Results for erasure of single disks by third strategy}
   \begin{center}
@@ -208,7 +208,7 @@ Figure \ref{fig:compare_write_10_14disks} presents the results from the Table \r
 \begin{center}
   \includegraphics[width=0.65\textwidth]{aver_compl_6-14}
 \end{center}
-  \caption{Time results for average erasure and complete erasure}
+  \caption{Time results for the erasure with 256 transfer length}
   \label{fig:aver_compl_6-14}
 \end{figure}
 
@@ -248,18 +248,18 @@ Figure \ref{fig:comp_256_512length} presents the time results of complete erasur
 \begin{center}
   \includegraphics[width=0.65\textwidth]{comp_disk_repl_W10}
 \end{center}
-  \caption{Results after replacement of the disks 4,5 and 11.}
+  \caption{Results after replacement of the disks 4, 5 and 11.}
   \label{fig:comp_disk_repl_W10}
 \end{figure}
 
 
 \newpage
-Figure \ref{fig:comp_256_best_length} presents the time results of theoretical optimal complete erasure in comparison with results with transfer length 256.
+Figure \ref{fig:comp_256_best_length} presents the time results of theoretical optimal complete erasure in comparison with the results with transfer length 256.
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{comp_256_best_length}
 \end{center}
-  \caption{Results for complete erasure depending on the transfer length}
+  \caption{Results for theoretical optimal erasure}
   \label{fig:comp_256_best_length}
 \end{figure}
 

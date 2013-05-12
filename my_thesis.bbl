@@ -28,6 +28,11 @@ Michael Arellano.
 \newblock {\em Ultra320 SCSI: New Technology - Still SCSI}.
 \newblock SCSI Trade Association, 2001.
 
+\bibitem{dyn_bal_web}
+Valeria Cardellini, Michele Colajanni, and Philip~S. Yu.
+\newblock Dynamic load balancing on web-server systems.
+\newblock {\em IEEE Internet Computing}, 3(3):28--39, May 1999.
+
 \bibitem{scsi3_bc}
 T10~Technical Committee.
 \newblock {\em Working Draft. Revision 35. Information technology - SCSI Block
@@ -46,6 +51,11 @@ Carlo Kopp.
 \newblock {\em An Introduction to SCSI Disk Performance}.
 \newblock Dr Carlo Kopp's Industry Publications, 2005.
 
+\bibitem{draft_alg}
+Lionel~M. Ni, Chong-Wei Xu, and Thomas~B. Gendreau.
+\newblock A distributed drafting algorithm for load balancing.
+\newblock {\em IEEE Trans. Softw. Eng.}, 11(10):1153--1161, October 1985.
+
 \bibitem{oper_sys_conc}
 Abraham Silberschatz;~James Peterson.
 \newblock {\em Operating System Concepts, 8th edition}.
@@ -55,6 +65,11 @@ Abraham Silberschatz;~James Peterson.
 Gary Field; Peter~M. Ridge.
 \newblock {\em The Book of SCSI, 2nd Edition}.
 \newblock Publishers Group West, 2000.
+
+\bibitem{stat_load_bal_1985}
+Asser~N. Tantawi and Don Towsley.
+\newblock Optimal static load balancing in distributed computer systems.
+\newblock {\em J. ACM}, 32(2):445--465, April 1985.
 
 \bibitem{cache_strategies}
 Ramakrishna Karedla; J. Spencer Love; Bradley~G. Wherry.

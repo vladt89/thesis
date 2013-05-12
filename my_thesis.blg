@@ -11,45 +11,45 @@ Warning--empty author and editor in increase_pci
 Warning--empty author and editor in raid_overview
 Warning--empty author and editor in hp_642_desc
 Warning--empty author and editor in which_raid
-You've used 15 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            567 strings with 5766 characters,
-and the built_in function-call counts, 3174 in all, are:
-= -- 282
-> -- 81
+            591 strings with 6282 characters,
+and the built_in function-call counts, 4243 in all, are:
+= -- 391
+> -- 130
 < -- 0
-+ -- 40
-- -- 22
-* -- 145
-:= -- 528
-add.period$ -- 41
-call.type$ -- 15
-change.case$ -- 42
++ -- 60
+- -- 38
+* -- 239
+:= -- 705
+add.period$ -- 50
+call.type$ -- 18
+change.case$ -- 59
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 183
-empty$ -- 343
-format.name$ -- 22
-if$ -- 685
+cite$ -- 26
+duplicate$ -- 216
+empty$ -- 424
+format.name$ -- 38
+if$ -- 899
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 25
-newline$ -- 74
-num.names$ -- 22
-pop$ -- 110
+int.to.str$ -- 18
+missing$ -- 28
+newline$ -- 89
+num.names$ -- 28
+pop$ -- 121
 preamble$ -- 1
-purify$ -- 41
+purify$ -- 55
 quote$ -- 0
-skip$ -- 90
+skip$ -- 112
 stack$ -- 0
-substring$ -- 103
-swap$ -- 15
+substring$ -- 194
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
+type$ -- 44
 warning$ -- 8
-while$ -- 24
-width$ -- 17
-write$ -- 145
+while$ -- 36
+width$ -- 20
+write$ -- 178
 (There were 8 warnings)
