@@ -7,7 +7,7 @@
 \nomenclature{SMART}{Self-Monitoring, Analysis and Reporting Technology}
 \nomenclature{JBOD}{Just a Bunch of Disks}
 
-In this chapter we will focus on basic information for understanding the topic of the paper. We will discuss different types of load balancing systems and consider which things should programmer take into attention during implementing this kind of system. This chapter also describes different types of RAID, which is undivided part of the controllers. Finally, the last chapter tells about different write commands, which we are going to use during the thesis.
+In this chapter we will focus on basic information for understanding the topic of the paper. We will discuss different types of load balancing systems and consider which things should programmer take into attention during implementing this kind of system. This chapter also describes different types of RAID, which is undivided part of the controllers. Finally, the last section tells about different write commands, which we are going to use during the thesis. This section gives the information about the structure of the commands and opens many commands parameters in details. This chapter keeps the basic knowledge, which reader needs for understanding the results of the paper.
 
 \newpage
 \section{Load balancing}
@@ -53,7 +53,7 @@ Another type RAID 5, which is presented on the Figure \ref{fig:raid5}, uses data
   \caption{Prototype of RAID 5}
   \label{fig:raid5}
 \end{figure}
-Moreover, nowadays there are RAID controllers, which already have load balancing system inside and the user can set the mode, which is more comfortable in the some situations. In our case the commands should be sent straight to the disk that is why the load balancing system from controller is not helping at all, because of its own methodology.  
+Moreover, nowadays there are RAID controllers, which already have load balancing system inside and the user can set the mode, which is more comfortable in the some situations. This system takes care only about logical disks, but we need to communicate only with physical disks. That is why we need to have our own load balancing system, which will help us to distribute the resources before the commands come to the controller. Because in our case the commands should be sent straight to the disks, load balancing system from the controller does not help at all. Moreover, during communication directly with the disks, we do not need to remember if there is any RAID or not, because the commands are sent through the controller without any changes.  
 
 On the picture \ref{fig:3ware_RAID} one of the SATA RAID controllers is presented. 
 \begin{figure}[h]

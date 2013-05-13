@@ -6,7 +6,7 @@
 \BOOKMARK [1][-]{section.2.3}{SCSI RAID controllers}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.4}{SCSI WRITE and WRITE SAME commands}{chapter.2}% 7
 \BOOKMARK [0][-]{chapter.3}{Mathematical problem definition}{}% 8
-\BOOKMARK [1][-]{section.3.1}{Model of the SCSI controller communication with the disks}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.1}{Communication model between SCSI controller and SCSI disks}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.2}{Mathematical problem definition}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.3}{Technical limitations}{chapter.3}% 11
 \BOOKMARK [1][-]{section.3.4}{Theoretical estimations}{chapter.3}% 12
@@ -18,4 +18,5 @@
 \BOOKMARK [1][-]{section.5.1}{Results with WRITE SAME 10 command}{chapter.5}% 18
 \BOOKMARK [1][-]{section.5.2}{Results with WRITE 10 command}{chapter.5}% 19
 \BOOKMARK [1][-]{section.5.3}{Analysis of the results}{chapter.5}% 20
-\BOOKMARK [0][-]{section*.31}{Bibliography}{}% 21
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 21
+\BOOKMARK [0][-]{section*.31}{Bibliography}{}% 22

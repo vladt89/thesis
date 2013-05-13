@@ -28,6 +28,11 @@ Michael Arellano.
 \newblock {\em Ultra320 SCSI: New Technology - Still SCSI}.
 \newblock SCSI Trade Association, 2001.
 
+\bibitem{load_bal_policy}
+Amnon Barak and Amnon Shiloh.
+\newblock A distributed load-balancing policy for a multicomputer.
+\newblock {\em Softw. Pract. Exper.}, 15(9):901--913, September 1985.
+
 \bibitem{dyn_bal_web}
 Valeria Cardellini, Michele Colajanni, and Philip~S. Yu.
 \newblock Dynamic load balancing on web-server systems.
@@ -45,6 +50,11 @@ T13~Technical Committee.
   Set (ATA8-ACS)}.
 \newblock American National Standard of Accredited Standards Committee INCITS,
   2007.
+
+\bibitem{diff_policies}
+Antonio Corradi, Letizia Leonardi, and Franco Zambonelli.
+\newblock Diffusive load-balancing policies for dynamic applications.
+\newblock {\em IEEE Concurrency}, 7(1):22--31, January 1999.
 
 \bibitem{intro_scsi_perform}
 Carlo Kopp.
