@@ -1,11 +1,11 @@
 \nomenclatureentry{aIT@[{IT}]\begingroup Information Technology\nomeqref {1.0}|nompageref}{1}
 \nomenclatureentry{aSCSI@[{SCSI}]\begingroup Small Computer System Interface\nomeqref {1.0}|nompageref}{1}
-\nomenclatureentry{aRAID@[{RAID}]\begingroup Redundant Array of Independent Disks\nomeqref {2.0}|nompageref}{3}
-\nomenclatureentry{aATA@[{ATA}]\begingroup Serial ATA (AT Attachment)\nomeqref {2.0}|nompageref}{3}
-\nomenclatureentry{aIDE@[{IDE}]\begingroup Integrated Drive Electronics\nomeqref {2.0}|nompageref}{3}
-\nomenclatureentry{aSAS@[{SAS}]\begingroup Serial attached SCSI\nomeqref {2.0}|nompageref}{3}
-\nomenclatureentry{aSMART@[{SMART}]\begingroup Self-Monitoring, Analysis and Reporting Technology\nomeqref {2.0}|nompageref}{3}
-\nomenclatureentry{aJBOD@[{JBOD}]\begingroup Just a Bunch of Disks\nomeqref {2.0}|nompageref}{3}
-\nomenclatureentry{aSCA@[{SCA}]\begingroup Single Connector Attachment\nomeqref {3.0}|nompageref}{13}
-\nomenclatureentry{aHP@[{HP}]\begingroup Hewlett Packard\nomeqref {4.0}|nompageref}{29}
-\nomenclatureentry{aVHDCI@[{VHDCI}]\begingroup Very-High-Density Cable Interconnect\nomeqref {4.0}|nompageref}{29}
+\nomenclatureentry{aRAID@[{RAID}]\begingroup Redundant Array of Independent Disks\nomeqref {2.0}|nompageref}{4}
+\nomenclatureentry{aATA@[{ATA}]\begingroup Serial ATA (AT Attachment)\nomeqref {2.0}|nompageref}{4}
+\nomenclatureentry{aIDE@[{IDE}]\begingroup Integrated Drive Electronics\nomeqref {2.0}|nompageref}{4}
+\nomenclatureentry{aSAS@[{SAS}]\begingroup Serial attached SCSI\nomeqref {2.0}|nompageref}{4}
+\nomenclatureentry{aSMART@[{SMART}]\begingroup Self-Monitoring, Analysis and Reporting Technology\nomeqref {2.0}|nompageref}{4}
+\nomenclatureentry{aJBOD@[{JBOD}]\begingroup Just a Bunch of Disks\nomeqref {2.0}|nompageref}{4}
+\nomenclatureentry{aSCA@[{SCA}]\begingroup Single Connector Attachment\nomeqref {3.0}|nompageref}{15}
+\nomenclatureentry{aHP@[{HP}]\begingroup Hewlett Packard\nomeqref {4.0}|nompageref}{31}
+\nomenclatureentry{aVHDCI@[{VHDCI}]\begingroup Very-High-Density Cable Interconnect\nomeqref {4.0}|nompageref}{31}

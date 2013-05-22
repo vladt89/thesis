@@ -1,24 +1,24 @@
 \contentsline {chapter}{List of abbreviations}{iv}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Introduction to load balancing and RAID controllers}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Load balancing}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}RAID}{6}{section.2.2}
-\contentsline {section}{\numberline {2.3}SCSI RAID controllers}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}SCSI WRITE and WRITE SAME commands}{10}{section.2.4}
-\contentsline {chapter}{\numberline {3}Mathematical problem definition}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Communication model between SCSI controller and SCSI disks}{14}{section.3.1}
-\contentsline {section}{\numberline {3.2}Mathematical problem definition}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}Technical limitations}{20}{section.3.3}
-\contentsline {section}{\numberline {3.4}Theoretical estimations}{25}{section.3.4}
-\contentsline {paragraph}{WRITE SAME command}{26}{section*.10}
-\contentsline {paragraph}{WRITE command}{27}{section*.11}
-\contentsline {chapter}{\numberline {4}Application of load balancing strategies to the HP Smart Array 642}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}HP Smart Array 642}{29}{section.4.1}
-\contentsline {section}{\numberline {4.2}Load balancing strategies}{30}{section.4.2}
-\contentsline {section}{\numberline {4.3}Planning dynamic load balancing system}{33}{section.4.3}
-\contentsline {chapter}{\numberline {5}Experiments and results}{37}{chapter.5}
-\contentsline {section}{\numberline {5.1}Results with WRITE SAME 10 command}{37}{section.5.1}
-\contentsline {section}{\numberline {5.2}Results with WRITE 10 command}{44}{section.5.2}
-\contentsline {section}{\numberline {5.3}Analysis of the results}{49}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion}{51}{chapter.6}
-\contentsline {chapter}{Bibliography}{53}{section*.31}
+\contentsline {chapter}{\numberline {2}Introduction to load balancing and RAID controllers}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Load balancing}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}RAID}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}SCSI RAID controllers}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}SCSI WRITE and WRITE SAME commands}{12}{section.2.4}
+\contentsline {chapter}{\numberline {3}Mathematical problem definition}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Communication model between SCSI controller and SCSI disks}{16}{section.3.1}
+\contentsline {section}{\numberline {3.2}Mathematical problem definition}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Technical limitations}{22}{section.3.3}
+\contentsline {section}{\numberline {3.4}Theoretical estimations}{27}{section.3.4}
+\contentsline {paragraph}{WRITE SAME command}{28}{section*.10}
+\contentsline {paragraph}{WRITE command}{29}{section*.11}
+\contentsline {chapter}{\numberline {4}Application of load balancing strategies to the HP Smart Array 642}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}HP Smart Array 642}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Load balancing strategies}{32}{section.4.2}
+\contentsline {section}{\numberline {4.3}Planning dynamic load balancing system}{35}{section.4.3}
+\contentsline {chapter}{\numberline {5}Experiments and results}{39}{chapter.5}
+\contentsline {section}{\numberline {5.1}Results with WRITE SAME 10 command}{39}{section.5.1}
+\contentsline {section}{\numberline {5.2}Results with WRITE 10 command}{46}{section.5.2}
+\contentsline {section}{\numberline {5.3}Analysis of the results}{51}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion}{53}{chapter.6}
+\contentsline {chapter}{Bibliography}{55}{section*.31}
