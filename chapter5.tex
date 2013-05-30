@@ -4,11 +4,10 @@
 In this chapter we present the test results of the application, which sends WRITE 10 and WRITE SAME 10 commands with different parameters. We made all the tests with WRITE 10 command, when the disks were connected with the enclosure to the controller. But some tests with WRITE SAME 10 command were done with the backplane. Mostly we are interested in decreasing the time of complete erasure, but sometimes, because of the different speed of the disks, the results started to be useless and strange, that is why we started to calculate also the time of erasure for single disks. 
 
 \section{Results with WRITE SAME 10 command}
-Using WRITE SAME 10 command we tested 3 different strategies that we considered before. The tests for the first and second strategies were done with 5 disks, connected with the backplane to the internal port of the HP Smart Array 642 controller. The third strategy was tested with 14 disks, connected with the enclosure to the external port of the controller. 
+Using WRITE SAME 10 command we tested 3 different strategies that we described in the Section \ref{subsec:lb_strategies}. The tests for the first and second strategies were done with 5 disks, connected with the backplane to the internal port of the HP Smart Array 642 controller. The third strategy was tested with 14 disks, connected with the enclosure to the external port of the controller. 
 
 \newpage 
-%\subsection{First strategy}
-During testing erasure with first strategy we got the results presented in the Table \ref{tbl:tbl_logic1}. 
+Table \ref{tbl:tbl_logic1} presents the results, which we got during testing the complete erasure with the first strategy. 
 
 \begin{table}[h!]
   \caption{Results for complete erasure by first strategy}
@@ -36,10 +35,7 @@ Figure \ref{fig:logic1} presents the results from the Table \ref{tbl:tbl_logic1}
 \end{figure}
 
 \newpage
-
-%\subsection{Second strategy}
-During testing erasure with second strategy we got the results presented in the Table \ref{tbl:tbl_logic2}. 
-
+Table \ref{tbl:tbl_logic2} presents the results, which we got during testing the complete erasure with the second strategy.
 
 \begin{table}[h!]
   \caption{Results for complete erasure by second strategy}
@@ -66,12 +62,9 @@ Figure \ref{fig:logic2} presents the results from the Table \ref{tbl:tbl_logic2}
   \label{fig:logic2}
 \end{figure}
 
+From these results we can notice that the second strategy works slower than the first one, which is obvious because it needs to change the devices quite often. However, if we compare the Figures \ref{tbl:tbl_logic1} and \ref{fig:logic2} we can see that the difference is only about 1 minute, which is insignificant value in comparison with time for complete erasure of 5 disks, which takes around 50 minutes. 
 
-\newpage
-%\subsection{Third strategy}
-During testing erasure with third strategy we got the results presented in the Table \ref{tbl:tbl_logic3}. 
-
-
+Table \ref{tbl:tbl_logic3} presents the results, which we got during testing the complete erasure with the third strategy.
 \begin{table}[h!]
   \caption{Results for complete erasure by third strategy}
   \begin{center}
@@ -109,10 +102,10 @@ Figure \ref{fig:logic3} presents the results from the Table \ref{tbl:tbl_logic3}
   \label{fig:logic3}
 \end{figure}
 
-From the Figure \ref{fig:logic3} we can see that for disks from 4 to 12 the time of complete erasure is constant. Third strategy sends the commands parallel to several disks. That means if there is one slow disk in the task, the whole time of the erasure will be slow. Therefore, we decided to calculate the time for erasure of single disk.
+From the Figure \ref{fig:logic3} we can see that for disks from 4 to 12 the time of complete erasure is constant. Third strategy sends the commands parallel to several disks. That means if there is one slow disk in the task, the whole time of the erasure will be slow. Therefore, we decided to calculate the time of the erasure for single disk.
 
 \newpage
-During testing erasure for single disks with third strategy we got the results presented in the Table \ref{tbl:tbl_logic3_2}. Moreover, in the Table \ref{tbl:tbl_logic3_2} we present the time of erasure for single disk during complete erasure. 
+During testing the erasure of single disks with third strategy we got the results presented in the Table \ref{tbl:tbl_logic3_2}. Moreover, in the Table \ref{tbl:tbl_logic3_2} we present the time of erasure for single disk during complete erasure. 
 
 \begin{table}[h!]
   \caption{Results for erasure of single disks by third strategy}
@@ -150,7 +143,10 @@ Figure \ref{fig:compare_logic3} presents the results from the Table \ref{tbl:tbl
   \label{fig:compare_logic3}
 \end{figure}
 
-By replacing disks 4,5 and 11 we got different results for single disks during complete erasure, which are shown on the Figure \ref{fig:better_res_WS}.
+The third strategy works without any problems, but the results of several disks are quite different, which gives an idea that there are some other parameters of software or hardware, which influence on the speed of the erasure. We can see from the Figures \ref{fig:logic1} and \ref{fig:logic2} that the time of first and second strategies is increasing linearly. We could not say the same about the third strategy because the disks have different speed or some other parameters affect on the maximum speed of the disk. Figure \ref{fig:compare_logic3} shows that the difference is very low between the times of erasure for single disk and for single disk during complete erasure. That means that the bus is not a bottleneck in the situation, when we send WRITE SAME 10 commands parallel to 14 disks, which are connected to the controller. Thus, only speed of the disks is a limiting factor.
+
+
+By replacing disks 4, 5 and 11 we got different results for the erasure of single disks during complete erasure, which are shown on the Figure \ref{fig:better_res_WS}.
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{better_res_WS}
@@ -159,6 +155,7 @@ By replacing disks 4,5 and 11 we got different results for single disks during c
   \label{fig:better_res_WS}
 \end{figure}
 
+The results from the Figure \ref{fig:better_res_WS} proves the fact that only the disk speed is the limiting factor with the WRITE SAME 10 command. We replaced 3 slow disks and the results show that the time of complete erasure decreased from 11 to 10 minutes. However, it is still strange that the difference of the time of erasure for several disks can be even 4 minutes, which is almost half time of the complete erasure, but the disk parameters are completely the same.
 
 
 
@@ -276,9 +273,6 @@ Figure \ref{fig:comp_256_best_length} presents the time results of theoretical o
 \newpage
 \section{Analysis of the results}
 
-After testing with WRITE SAME 10 command we can notice that the second strategy is working slower than the first one, which is obvious because it needs to change the devices quite often. However, if we compare the Figures \ref{tbl:tbl_logic1} and \ref{fig:logic2} we can see that the difference is only about 1 minute, which is insignificant value in comparison with time for complete erasure of 5 disks, which takes around 50 minutes. The third strategy works without any problems, but the results of several disks are quite different, which gives an idea that there are some other parameters of software or hardware, which influence on the speed of the erasure.
-
-We can see from the Figures \ref{fig:logic1} and \ref{fig:logic2} that the time of first and second strategies is increasing linearly. We could not say the same about the third strategy because the disks have different speed or some other parameters affect on the maximum speed of the disk. Figure \ref{fig:compare_logic3} shows that the difference is very low between the times of erasure for single disk and for single disk during complete erasure. That means that the bus is not a bottleneck in the situation, when we send WRITE SAME 10 command and 14 disks are connected to the controller. Thus, only rotation speed of the disks is a limiting factor. The Figure \ref{fig:better_res_WS} proves this fact more time by the results for single disk during complete erasure after replacement of 3 slow disks. The results show that the time of complete erasure decreased from 11 to 10 minutes. However, it is still strange that the difference of the time of erasure for several disks can be even 4 minutes, which is almost half time of the complete erasure, but the disk parameters are completely the same.
 
 The testing results do not depend on the application running and the erasure time is not divided randomly to different disks. Table \ref{tbl:tbl_write_10_01} proved this fact by results from the same test running several times, which gave the whole difference with -13 seconds for erasure of 14 disks by WRITE 10 command. That means that even for erasure of the fastest disk 13 seconds will take only 0.01 of whole erasure. That is why we could ignore this difference. 
 
