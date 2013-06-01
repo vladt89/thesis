@@ -161,8 +161,7 @@ The results from the Figure \ref{fig:better_res_WS} proves the fact that only th
 
 \newpage
 \section{Results with WRITE 10 command}
-During research with WRITE SAME 10 command we understood that the parallel strategy works fine with that
-controller that is why experiments with WRITE 10 command were done only with the third strategy. Several tests were done with WRITE 10 command with transfer length 256. During testing erasure for single disks with third strategy we got the results presented in the Table \ref{tbl:tbl_write_10_01}.
+During the research with WRITE SAME 10 command we understood that parallel strategy works pretty well with HP smart Array 642 controller that is why we decided to focus our experiments with WRITE 10 command only on the third strategy. We realized several tests with transfer length 256 which Blancco software uses by default. Table \ref{tbl:tbl_write_10_01} presents the results, which we got during testing the complete erasure with the third strategy.
 \begin{table}[h!]
   \caption{Results for erasure of single disks by third strategy}
   \begin{center}
@@ -190,16 +189,21 @@ controller that is why experiments with WRITE 10 command were done only with the
 \end{table}
 
 \newpage
-Figure \ref{fig:compare_write_10_14disks} presents the results from the Table \ref{tbl:tbl_write_10_01} more clearly.
+Table \ref{tbl:tbl_write_10_01} presents the time results of the erasure of 14 disks with the transfer length 256. The third column shows how much time we need to spend for erasure one single 18.2 GB disk. The forth column consists of the results of time which we need to wait for the erasure of single disk during the parallel erasure of 14 disks. That means that, for example, for disk 13 we need to spend 23 min 39 sec when we erase it separately, but if we erase 14 disks together the erasure of disk 13 will take 38 min 14 sec. Figure \ref{fig:compare_write_10_14disks} presents the results from the Table \ref{tbl:tbl_write_10_01} more clearly.
 
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{compare_write_10_14disks}
 \end{center}
-  \caption{Time results for complete erasure with transfer length 256}
+  \caption{Results for erasure of single disks by third strategy with transfer length 256}
   \label{fig:compare_write_10_14disks}
 \end{figure}
 
+The testing results do not depend on the application running and the erasure time is not divided randomly to different disks. Table \ref{tbl:tbl_write_10_01} proved this fact by results from the same test running several times, which gave the whole difference with -13 seconds for erasure of 14 disks by WRITE 10 command. That means that 13 seconds will take only 0.01 of whole erasure process of the fastest disk. That is why we will ignore this difference. 
+
+From the Figure \ref{fig:compare_write_10_14disks} we also can notice how big is the time difference for single erasure if we decide to erase 14 disks together using WRITE 10 command. The lower curve shows us that for erasure one of these 14 disks we need from 20 to 25 minutes. However, if we launch the application together with 14 disks, for the disk 2 it will take 45 minutes, but for disk 10 already 50 minutes. Anyway, the complete erasure takes a bit more than 60 minutes, which is just 3 times bigger than single erasure of the fastest disk. 
+
+The Figure \ref{fig:aver_compl_6-14} presents the graphics of erasure times depending on the amount of disks with the transfer length 256. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -209,8 +213,21 @@ Figure \ref{fig:compare_write_10_14disks} presents the results from the Table \r
   \label{fig:aver_compl_6-14}
 \end{figure}
 
-\newpage
-Figure \ref{fig:diff_transfer_length_diskF} presents the time results for the disk 1 depending on the different transfer length.
+The upper curve of the Figure \ref{fig:aver_compl_6-14} shows the time results of the complete erasure. We can see that the result for the complete erasure of 14 disks is equal to the result from the Figure \ref{fig:compare_write_10_14disks}. The lower curve shows the average time results for single erasure during complete erasure. That means that when we divide the sum of the values from the forth column of the Table \ref{tbl:tbl_write_10_01} by 14, we will get the last value of the curve for average time from the Figure \ref{fig:aver_compl_6-14}. From the Figure \ref{fig:aver_compl_6-14} we can make a conclusion that addition of 1 disk gives us addition of 3 minutes to the complete erasure.
+
+We can notice from the Figure \ref{fig:compare_logic3} that during complete erasure by WRITE SAME 10 command disks 2, 4 and 5 showed the worst time. In the same time the Figure \ref{fig:compare_write_10_14disks} presents that during complete erasure by WRITE 10 command disks 6 and 8 showed the worst time. That gives an idea that there are some other parameters which also influence on the time of erasure. It is possible that the controller decides which command goes first and to which device. Thus, we could not influence on that fact. We decided to replace disks 4, 5 and 11 and check how it will change the situation. The Figure \ref{fig:comp_disk_repl_W10} shows these results. 
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.65\textwidth]{comp_disk_repl_W10}
+\end{center}
+  \caption{Results after replacement of the disks 4, 5 and 11.}
+  \label{fig:comp_disk_repl_W10}
+\end{figure}
+
+From these results we can conclude that time for complete erasure decreased for 1 minute and the same disks show the maximum and minimum times. However, it is strange that during single erasure by WRITE 10 command disks 1 and 14 were the fastest and during complete erasure their results are closed to very slow ones.
+
+We discussed before that transfer length is one the most important parameters during the erasure by WRITE 10 command. Furthermore, we can influence on it. Figure \ref{fig:diff_transfer_length_diskF} presents the time results for the erasure of disk 1 depending on the different transfer length.
 
 \begin{figure}[h!]
 \begin{center}
@@ -220,6 +237,9 @@ Figure \ref{fig:diff_transfer_length_diskF} presents the time results for the di
   \label{fig:diff_transfer_length_diskF}
 \end{figure}
 
+The Figure \ref{fig:diff_transfer_length_diskF} shows that 2048 is the optimal value for 1 disk. If we take the value, for example, 4096, which is bigger that 2048, we come to the situation when we get errors from the WRITE 10 command. It happens because the limit of 2 MB is exceeded and the driver cannot handle so big amount of information. The Figure \ref{fig:diff_transfer_length_diskF} shows that  we need for erasure of disk 1 with transfer length 2048 only 8 minutes, which is 12 minutes faster than the erasure with transfer length 256. This result proves the fact that we can influence on the speed erasure by varying the transfer length. Thus, we can achieve faster erasure by finding the optimal transfer lengths depending on the amount of disks. Our suggested load balancing system will help with solving this problem.
+
+The Figure \ref{fig:diff_length_14disks} shows the results of testing different transfer length during erasure of 14 disks in the same time.
 
 \begin{figure}[h!]
 \begin{center}
@@ -229,29 +249,20 @@ Figure \ref{fig:diff_transfer_length_diskF} presents the time results for the di
   \label{fig:diff_length_14disks}
 \end{figure}
 
+To summarize the results from the Figure \ref{fig:diff_length_14disks} we can say that transfer lengths 512 and 256 give almost the same results, but the optimal value for 14 disks is 512, which is easier to see from Figure \ref{fig:comp_256_512length}. 
 
-\newpage
 Figure \ref{fig:comp_256_512length} presents the time results of complete erasure with transfer length 256 and 512.
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{comp_256_512length}
 \end{center}
-  \caption{Results for complete erasure depending on the transfer length}
+  \caption{Results for complete erasure with transfer lengths 256 and 512 depending on the amount of disks}
   \label{fig:comp_256_512length}
 \end{figure}
 
-%On the Figure \ref{fig:comp_disk_repl_W10} we can notice the differences between the times for the erasure after replacement some of the disks.
-\begin{figure}[h!]
-\begin{center}
-  \includegraphics[width=0.65\textwidth]{comp_disk_repl_W10}
-\end{center}
-  \caption{Results after replacement of the disks 4, 5 and 11.}
-  \label{fig:comp_disk_repl_W10}
-\end{figure}
-
-
 \newpage
 Figure \ref{fig:comp_256_best_length} presents the time results of theoretical optimal complete erasure in comparison with the results with transfer length 256.
+
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{comp_256_best_length}
@@ -259,6 +270,12 @@ Figure \ref{fig:comp_256_best_length} presents the time results of theoretical o
   \caption{Results for theoretical optimal erasure}
   \label{fig:comp_256_best_length}
 \end{figure}
+
+These graphics show the difference between the results of our suggested load balancing system and Blancco software at the moment. Load balancing system applies the Formula \ref{eq:optimal_length} to calculate the optimal transfer length. Thus, if we apply only our theoretical calculations the Figure \ref{fig:comp_256_best_length} shows the results of time improvement.  For the disks 1-8 we took another transfer length, which improves the time of erasure. For disk 1 and 2 the transfer length was 2048, for disk 3 and 4 - 1024, and for disks from 5 to 8 - 512.
+
+%We can see from the Figure \ref{fig:comp_256_best_length} that disks 1-8 have the differences of the results.
+
+Moreover, using our practical results we can suggest to apply the results from the Figure \ref{fig:comp_256_best2_length}, which improves the Blancco software for any amount of disks. The difference between theoretical optimal erasure and practical optimal erasure is another transfer length for disks 9-14. In practise, when we took the transfer length 512 we got better results in comparison with theoretical optimal erasure. These results shows that the optimal transfer length, which was calculated by testing and load balancing system, makes the erasure faster for WRITE 10 command from disk 1 to disk 14.
 
 \begin{figure}[h!]
 \begin{center}
@@ -270,14 +287,4 @@ Figure \ref{fig:comp_256_best_length} presents the time results of theoretical o
 
 
 
-\newpage
-\section{Analysis of the results}
 
-
-The testing results do not depend on the application running and the erasure time is not divided randomly to different disks. Table \ref{tbl:tbl_write_10_01} proved this fact by results from the same test running several times, which gave the whole difference with -13 seconds for erasure of 14 disks by WRITE 10 command. That means that even for erasure of the fastest disk 13 seconds will take only 0.01 of whole erasure. That is why we could ignore this difference. 
-
-The Figure \ref{fig:compare_write_10_14disks} presents how big is the time difference for single disk if we decided to erase 14 disks together using WRITE 10 command with transfer length 256. The lower curve shows us that for erasure one of these 14 disks we need from 20 to 25 minutes. However, if we launch the application together with 14 disks, for the disk 2 it will take 45 minutes, but for disk 10 already 50 minutes. Anyway, the complete erasure takes 60 minutes, which is just 3 times bigger than single erasure for the fastest disk. The Figure \ref{fig:aver_compl_6-14} presents the graphic of erasure time depending on the amount of disks. From these results we can make a conclusion that addition of 1 disk gives us addition of 3 minutes to the complete erasure.
-
-We can notice that during complete erasure by WRITE SAME 10 command disks 2, 4 and 5 showed the worst time. In the same time during complete erasure by WRITE 10 command disks 6 and 8 showed the worst time. That gives an idea that there are some other parameters that also depending on the time of erasure. Moreover, Figure \ref{fig:comp_disk_repl_W10} shows how changes the results after replacement disks 4, 5 and 11. We can conclude that time for complete erasure decreased for 1 minute and the same disks show the maximum and minimum times. It is also strange that during single erasure by WRITE 10 command disks 1 and 14 were the fastest and during complete erasure their results are very closed to very slow ones.
-
-Figures \ref{fig:diff_transfer_length_diskF} and \ref{fig:diff_length_14disks} show the results of testing different transfer length, which is one of the parameters that we can influence. To summarize these results we can say that transfer lengths 512 and 256 gives almost the same results, but the optimal value for 14 disks is 512, which is easier to see from Figure \ref{fig:comp_256_512length}. However, when we do not have so many disks, we could apply the suggested load balancing system from the section \ref{subsec:plan_load_bal} and calculate the optimal value by the formula \ref{eq:optimal_length}. This load balancing application will help to find the optimal transfer length for making the erasure faster. Thus, if we apply only our theoretical calculations the Figure \ref{fig:comp_256_best_length} shows the results of time improvement. Moreover, using our practical results we can suggest to apply the results from the Figure \ref{fig:comp_256_best2_length}, which improves the Blancco software for any amount of disks. The results shows that the optimal transfer length, which was calculated by testing and load balancing system, makes the erasure faster for WRITE 10 command from disk 1 to disk 14.
