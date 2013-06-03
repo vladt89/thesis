@@ -7,7 +7,7 @@
 \nomenclature{SMART}{Self-Monitoring, Analysis and Reporting Technology}
 \nomenclature{JBOD}{Just a Bunch of Disks}
 
-In this chapter, we will focus on basic information for understanding the topic of the paper. We will discuss different types of load balancing systems and consider the things, which programmer should take into attention during implementation this kind of systems. This chapter also describes different types of RAID, which is very important topic, when we speak about the controllers. Finally, the last section tells about different write commands, which we use for the erasure of disks. This section gives the information about the structure of the commands and opens many command parameters in details. This chapter gives the basic knowledge for understanding the results of the thesis.
+In this chapter, we will focus on basic information for understanding the topic of the paper. We will discuss different types of load balancing systems and consider the things, which programmer should take into attention during implementation this kind of systems. This chapter also describes different types of RAID, which is very important topic, when we speak about the controllers. Finally, the last section tells about different write commands, which we use for the erasure of the disks. This section gives the information about the structure of the commands and opens many parameters in details. This chapter gives the basic knowledge for understanding the results of the thesis.
 
 \newpage
 \section{Load balancing}
@@ -35,7 +35,7 @@ There are several types of RAID: RAID 0, RAID 1, RAID 5, RAID 6 and some others 
 
 One of the huge advantages of using RAID is that if one of the disks breaks down others can recover the information on that disk. Not all RAID architectures support this functionality, but most of them do. Some types of RAID provide fault tolerance of even two drive failures (RAID 6).
 
-Let consider some types of RAID more detailed. RAID 1 called also as "mirroring" is one of the main fundamental types of RAID, which refers to maintaining duplicate sets of all data on separate disk drives. There must be two disks in the configuration and there is a cost disadvantage as the usable capacity is half the number of available disks. RAID 1 provides cost-effective, high fault tolerance for configurations with two disk drives. The prototype of RAID 1 is presented on the Figure \ref{fig:raid1}.
+Let consider some types of RAID in more detail. RAID 1 called also as "mirroring" is one of the main fundamental types of RAID, which refers to maintaining duplicate sets of all data on separate disk drives. There must be two disks in the configuration and there is a cost disadvantage as the usable capacity is half the number of available disks. RAID 1 provides cost-effective, high fault tolerance for configurations with two disk drives. The prototype of RAID 1 is presented on the Figure \ref{fig:raid1}.
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[width=0.95\textwidth]{raid1}
@@ -44,7 +44,7 @@ Let consider some types of RAID more detailed. RAID 1 called also as "mirroring"
   \label{fig:raid1}
 \end{figure}
 
-Another type RAID 5, which is presented on the Figure \ref{fig:raid5}, uses data striping in a technique designed to provide fault-tolerant data storage, but doesn't require duplication of data like RAID 1 \cite{raid_overview}. Data is striped across all of the drives in the array, but for each stripe through the array (one stripe unit from each disk), one stripe unit is reserved to hold parity data calculated from the other stripe units in the same stripe. Read performance is therefore very good, but there is a penalty for writes, since the parity data has to be recalculated and written along with the new data. RAID 5 requires a minimum of three disks and a maximum of 16 disks. RAID 5 usable capacity is between 67\% - 97\% depending on the number of data drives in the RAID set.
+Another type RAID 5, which is presented on the Figure \ref{fig:raid5}, uses data striping in a technique designed to provide fault-tolerant data storage, but does not require duplication of data like RAID 1 \cite{raid_overview}. Data is striped across all of the drives in the array, but for each stripe through the array (one stripe unit from each disk), one stripe unit is reserved to hold parity data calculated from the other stripe units in the same stripe. Read performance is therefore very good, but there is a penalty for writes, since the parity data has to be recalculated and written along with the new data. RAID 5 requires a minimum of three disks and a maximum of 16 disks. RAID 5 usable capacity is between 67\% - 97\% depending on the number of data drives in the RAID set.
 \begin{figure}[h]
 \begin{center}
   \includegraphics[width=0.95\textwidth]{raid5}
@@ -52,7 +52,7 @@ Another type RAID 5, which is presented on the Figure \ref{fig:raid5}, uses data
   \caption{Prototype of RAID 5}
   \label{fig:raid5}
 \end{figure}
-Moreover, nowadays there are RAID controllers, which already have load balancing system inside and the user can set the mode, which is more comfortable in the some situations. This system takes care only about logical disks, but we need to communicate only with physical disks. That is why we need to have our own load balancing system, which will help us to distribute the resources before the commands come to the controller. Because in our case the commands should be sent straight to the disks, load balancing system from the controller does not help at all. Moreover, during communication directly with the disks, we do not need to remember if there is any RAID or not, because the commands are sent through the controller without any changes.  
+Moreover, nowadays there are RAID controllers, which have already load balancing system inside and the user can set the mode, which is more comfortable in the some situations. This system takes care only about logical disks, but we need to communicate only with physical disks. That is why we need to have our own load balancing system, which will help us to distribute the resources before the commands come to the controller. Load balancing system from the controller does not help up at all, because we should send the commands straight to the disks. Moreover, during communication directly with the disks, we do not need to remember if there is any RAID or not, because the commands are sent through the controller without any changes.  
 
 The Figure \ref{fig:3ware_RAID} presents one of the SATA RAID controllers. 
 \begin{figure}[h]
@@ -62,11 +62,12 @@ The Figure \ref{fig:3ware_RAID} presents one of the SATA RAID controllers.
   \caption{3ware SATA RAID controller 9500S-8}
   \label{fig:3ware_RAID}
 \end{figure}
-From the name of the device, it is clear that this controller can be connected to 8 SATA disks. It supports following types of RAID: 0, 1, 5, 10, 50 and JBOD (Just a Bunch of Disks).
+This 3ware SATA RAID controller can be connected to 8 SATA disks. It supports following types of RAID: 0, 1, 5, 10, 50 and JBOD (Just a Bunch of Disks).
+
 
 \newpage
 \section{SCSI RAID controllers}
-SCSI - Small Computer System Interface - is a set of standards for physically connecting and transferring data between computers and peripheral devices \cite{book_of_scsi}. The SCSI standards define commands, protocols, and electrical and optical interfaces. There are also other interfaces such as SATA (Serial ATA (AT Attachment)), IDE (Integrated Drive Electronics), SAS (Serial attached SCSI). In general, we divide the interfaces to two categories: ATA and SCSI. In the following content, it means the according protocol. IDE and SATA interfaces relate to ATA and SAS belongs to SCSI. Several types of disks are presented on the Figure \ref{fig:disks}. In this paper, the topic mostly is about SCSI interface, but sometimes we compare it with ATA. If we compare SAS and SCSI, we consider them as similar interfaces. However, SAS is a new version of SCSI and it gives a single channel for each disk. SCSI has only one channel for all disks.
+SCSI - Small Computer System Interface - is a set of standards for physically connecting and transferring data between computers and peripheral devices \cite{book_of_scsi}. The SCSI standards define commands, protocols, and electrical and optical interfaces. There are also other interfaces such as SATA (Serial ATA (AT Attachment)), IDE (Integrated Drive Electronics), SAS (Serial attached SCSI). In general, we divide the interfaces to two categories: ATA and SCSI. In the following content, it means the according protocol. IDE and SATA interfaces relate to ATA and SAS belongs to SCSI. Three different types of disks are presented on the Figure \ref{fig:disks}. In this paper, we will focus on SCSI interface, but sometimes we will compare it with ATA. If we compare SAS and SCSI, we consider them as similar interfaces. However, SAS is a new version of SCSI and it gives a single channel for each disk. SCSI has only one channel for all disks.
 \begin{figure}[h]
   \advance\leftskip-0.1\textwidth
   \subfloat[SCSI disk]{
@@ -83,9 +84,9 @@ SCSI - Small Computer System Interface - is a set of standards for physically co
 
 \section{SCSI WRITE and WRITE SAME commands}
 \label{subsec:write_comm}
-This research is made for the Blancco Oy Ltd, which produce the erasure software. The main part of the erasure is performed by SCSI WRITE and WRITE SAME commands \cite{scsi3_bc}. In general, all commands belongs to three groups: Non-Data commands, Data-In and Data-Out. For the last two groups it means that the programmer should send the command including the buffer. Data-Out means that the data is sent to the disk. For the Data-In group it is in opposite way and data comes from the disk. The example of Data-In command is any SCSI READ command. Write commands belongs to the Data-Out group because these commands must have Data-Out buffer, containing the data, which we write to the disk. Nowadays, for SCSI there are 4 different versions of write command and 3 for the write same command.  
+This research is made for the Blancco Oy Ltd, which produces the erasure software. The main part of the erasure is performed by SCSI WRITE and WRITE SAME commands \cite{scsi3_bc}. In general, all commands belongs to three groups: Non-Data, Data-In and Data-Out commands. For the last two groups it means that the programmer should send the command including the buffer. Data-Out means that the buffer is sent to the disk. For the Data-In group it is in opposite way and data comes from the disk. The example of Data-In command is any SCSI READ command. Write commands belongs to the Data-Out group because these commands must have Data-Out buffer, containing the data, which we write to the disk. Nowadays, for SCSI there are 4 different versions of WRITE command and 3 for the WRITE SAME command.  
 
-Lets consider SCSI WRITE commands first. Mostly the commands are different because of the length. Each command has not only operation code, which is the main criteria for the command, but also some other variables such as Logical Block Address (LBA), transfer length, control and some others. These variables do not include Data-Out buffer and the Figure \ref{fig:write_10} shows the example how the commands are defined in specification \cite{scsi3_bc}.
+Lets consider SCSI WRITE commands first. Mostly the commands are different because of the length. Each command has not only operation code, which is the main criteria for the command, but also some other variables such as Logical Block Address (LBA), transfer length, control and some others. These variables do not include Data-Out buffer. The Figure \ref{fig:write_10} shows the example how the commands are defined in SCSI specification \cite{scsi3_bc}.
 \begin{figure}[h]
 \begin{center}
   \includegraphics[width=0.95\textwidth]{write_10}
@@ -105,9 +106,9 @@ The following commands exist for writing the data to the disk:
 \end{itemize}
 The numbers in brackets shows the length of the command in bytes. It is obvious that the WRITE (10) command is the base for others. It seems that by now the best choice is WRITE (16) because in \cite{scsi3_bc} there are some notes, that <<Migration from the WRITE (10) command to the WRITE (16) command is recommended for all implementations>>. WRITE (32) should be used only in some special cases \cite{scsi3_bc}. In this research, we will focus only on WRITE 10 command, because after some test, it started to be understandable, that bus plays an important role in this model, and there is no reason to send more data.
 
-SCSI WRITE SAME commands have the same purposes as SCSI write commands. The difference and biggest advantage is that SCSI WRITE SAME command can be sent once and the Data-Out buffer can be written to the disk several times. That gives faster speed because the bus is not busy any more - only one command was sending, but the buffer is still writing. 
+SCSI WRITE SAME commands have the same purposes as SCSI WRITE commands. The difference and biggest advantage is that SCSI WRITE SAME command can be sent once and the Data-Out buffer can be written to the disk several times. That gives faster speed because the bus is not busy any more - only one command was sent, but the buffer is still writing. 
 
-There are three different types of write same commands, as we mentioned before:
+There are three different types of WRITE SAME commands, as we mentioned before:
 \begin{itemize}
 	\setlength{\itemsep}{-2mm}
 	\item WRITE SAME(10)
