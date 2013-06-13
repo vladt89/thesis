@@ -1,9 +1,9 @@
 {\bf Abstract}\\
 
 
-Load balancing is a technique to distribute workload which allows performing the same tasks with faster speed. Application of load balancing methods can help to fulfill the same problem using less amount of resources. This methodology is very important in any computational system because it can improve the speed which is one of the crucial properties. 
+Load balancing is a technique to distribute workload evenly, which allows performing the same tasks with faster speed. Application of load balancing methods can help to fulfill the same task using less resources. This methodology is very important in any computational system because it can improve the speed. 
 
-The thesis describes the communication model between SCSI controller and SCSI disks by different write commands. The application system sends SCSI WRITE and WRITE SAME commands to the disks through the controller to realize the complete erasure of the disks. The aim of the research is to figure out if the parallel strategy of overwriting of the disks is optimal. The thesis discusses the parameters, which can slow down the speed of erasure, and how we can avoid these parameters if it is possible.
+The thesis describes the communication model between a SCSI controller and SCSI disks. The application system sends SCSI WRITE and WRITE SAME commands to the disks through the controller to realize the complete erasure of the disks. The aim of the research is to figure out if the parallel strategy of overwriting of the disks is optimal. The thesis discusses the parameters, which impact the speed of erasure, and how we can avoid the bottlenecks.
 
 The results of the thesis show that disk speed is the limiting factor for the erasure if we perform it by WRITE SAME command. Using the WRITE command, the bus is the bottleneck, but by varying transfer length of the buffer it is possible to find the optimal way of sending the commands depending on the amount of disks.
 

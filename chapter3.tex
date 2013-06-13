@@ -2,7 +2,7 @@
 \label{chap3:title}
 \nomenclature{SCA}{Single Connector Attachment}
 
-This chapter opens our communication model between the SCSI controller and the disks from mathematical point of view. Moreover, we define the mathematical problem which we will solve in the thesis. In the beginning of the chapter, we consider the parameters which influence on the complete erasure. Later we model the dynamic load balancing system, which could help with improvement of the speed, and, finally, we pose the optimization problem. After that, we try to estimate the limitations which exist from theoretical and technical sides. This part of the chapter gives an idea what we should expect during practical tests of the erasure. Moreover, it helps to understand what parameters we should take into consideration during searching the solution for our problem.
+This chapter opens our communication model between a SCSI controller and the disks from mathematical point of view. Moreover, we define the mathematical problem which we will solve in the thesis. In the beginning of the chapter, we consider the parameters which influence on the complete erasure. Later we model the dynamic load balancing system, which could help with improvement of the speed, and, finally, we pose the optimization problem. After that, we try to estimate the limitations which exist from theoretical and technical sides. This part of the chapter gives an idea what we should expect during practical tests of the erasure. Moreover, it helps to understand what parameters we should take into consideration during searching the solution for our problem.
 
 \newpage
 \section{Communication model between SCSI controller and SCSI disks}
@@ -40,8 +40,7 @@ where $m_{ik}$ is the number of times that command $c_k$ should be sent, where $
 \label{eq:write_cond}
 	c_1 c_2 = 0, \forall F_i, i=\overline{1,N}.
 \end{equation}
-This condition means that only 1 command $c_1$ or $c_2$ can write to each disk. Thus the software can not erase the same disk with both commands $c_1$ and $c_2$. That means that only software decides which command is better to use and dynamic load balancing system should apply the strategy how to apply it more efficiently.
-
+This condition means that only 1 command $c_1$ or $c_2$ can write to each disk. Thus, the software can not erase the same disk with both commands $c_1$ and $c_2$. That means that only software decides which command is better to use and dynamic load balancing system should apply the strategy how to apply it more efficiently.
 
 For clear vision and comprehension, it is convenient to present the set of $F_i$ as a matrix $F_m$:
 \begin{equation}
@@ -58,14 +57,15 @@ For clear vision and comprehension, it is convenient to present the set of $F_i$
 \end{equation}
 where $F_m$ is the matrix with dimension $N\times3$.
 
-The capacity of each disk $i$ should be less than amount of data, which is sent for writing. That means that the following condition should be fulfilled:
+Using WRITE command $c_1$ we send more data for each disk $i$ than its capacity because with each command we need to send the buffer which will be written to the disk. That means that the following condition should be fulfilled:
 \begin{equation}
 	d_i < F_i, i=\overline{1,N}.
 \end{equation}
-But this condition is true only for the WRITE command $c_1$, because the WRITE SAME command $c_2$ sends the same buffer several times, which means that we do not need to send this buffer all the time. Thus, for the WRITE SAME command $c_2$ we have another condition:
+However, with WRITE SAME command $c_2$ we send the buffer once, but it is written to the disk several times. That means that we do not need to send this buffer all the time and the bus is not so busy any more. Thus, for the WRITE SAME command $c_2$ we have another condition:
 \begin{equation}
 	d_i > F_i, i=\overline{1,N}.
 \end{equation}
+We can see that WRITE SAME command has much more advantages than WRITE command, but there are situations when we can not use it. For example, we could not use WRITE SAME command when we want to send different buffers. Moreover, some devices do not support WRITE SAME command.
 
 The main aim of the research is to find the way to send the data faster to the disks. Of course, that it depends on all the devices which are in the model, on the strategy how the software sends the commands and on the parameters of the command that we use for erasure. Let define the variable $S_{max}$ for maximum speed and it is obvious that this variable is constant. According to the Formula \ref{eq:comp_erasure} and maximum speed $S_{max}$ it is possible to calculate the minimum time $T_{min}$ for realization complete erasure $F$ by the following formula:
 \begin{equation}
@@ -188,25 +188,25 @@ Lets model the real situation and try to estimate how long time does it take to 
 From these parameters, mostly we will focus on the interface, which has a speed 320 MB/s. That means that the speed of the bus c is equal to 320 MB/s. Basically all data on disks are divided to the sectors. Most of the time the size of the sector is 512 bytes, but in some cases this value can be different. In this research, we consider that the sector size is 512 bytes. We will focus on the parameters of the commands and the disks because the controller should not be a bottleneck, but we still need to remember that there are some limitations in the controller.
 
 \paragraph{WRITE SAME command}
-Let consider the WRITE SAME 10 command, which comes from the CPU \cite{scsi3_bc}. This command has 32 bits for the LBA (Logical block addressing) and 16 bits for the Number of Logical Blocks. The main huge advantage of that command is that we can send the same buffer to several logical blocks only with one command. It gives us a possibility to write much more data than we really send by the command.
+Let consider the WRITE SAME 10 command, which comes from the CPU \cite{scsi3_bc}. This command has 32 bits for the LBA (Logical block addressing) and 16 bits for the Number of Logical Blocks. The main huge advantage of that command is that we can send the same buffer to several logical blocks only with one command. It gives us a possibility to write much more data than we really send with the command.
 
 We can calculate the maximum amount of data that we can write with one WRITE SAME 10 command to the disk:
 \begin{equation}
 	\frac{2^{16}*512}{1024^2} = 32 MB.
 \end{equation}
-Let consider that the Model \ref{eq:comp_erasure} consists of 1 disk and we do not need any other commands except WRITE SAME one. That means that in Condition \ref{eq:write_cond} parameter $c_2$ will be equal to zero. We also assume that we do not need any special commands for the communication and $c_3$ is equal to zero. It gives a possibility to calculate complete erasure $F$ as a multiplication of command $c_1$ and amount of commands $m_{11}$. According to the knowledge of the capacity of the disk we can compute the number of commands $m_{11}$ that we need to send for erasure 18.2 GB disk.
+Let consider that the Model \ref{eq:comp_erasure} consists of 1 disk and we do not need any other commands except WRITE SAME one. That means that in Condition \ref{eq:write_cond} parameter $c_2$ will be equal to zero. We also assume that we do not need any special commands for the communication and $c_3$ is equal to zero. It gives a possibility to calculate complete erasure $F$ as a multiplication of command $c_1$ and amount of commands $m_{11}$. According to the knowledge of the capacity of the disk we can compute the number of commands $m_{11}$ that we need to send for erasure 18.2 GB disk. We write the buffer of 32 MB to the this disk with one WRITE SAME command that it why the number of commands
 \begin{equation}
-	m_{11} =\frac{F_1}{c_1} = \frac{18.2*1024}{32} = \frac{18636.8MB}{32MB} = 582.4.
+	m_{11} =\frac{d_1}{buffer~length} = \frac{18.2*1024}{32} = \frac{18636.8MB}{32MB} = 582.4.
 \end{equation}
 For performance of real erasure, we should divide the data to fill the last part of the disk, because we can not send 0.4 part of command. The main aim of the research is testing the erasure time that is why we will not consider this little part and will use the approximate value of 582.
 
 The size of WRITE SAME 10 command is 10 bytes. Including the buffer, which is 512, we get that one whole command is 522 B.
 So, to erase one disk by WRITE SAME command we need to send the following amount of data:\begin{equation}
-	(Command~length + Buffer~length)*m_{11}
+	F_1 = c_1*m_{11} = (Command~length + Buffer~length)*m_{11}.
 \end{equation}
-That means that to perform the erasure of one 18.2 GB disk we need only
+Thus to perform the erasure of one 18.2 GB disk we need only
 \begin{equation}
-	(10 + 512)*582 = 303804 B = 304 kB.
+	F_1 = (10 + 512)*582 = 303804 B = 304 kB.
 \end{equation}
 That means that for complete erasure of one disk we need to send only 304 kB. Another command WRITE 10 does not have so huge advantage, but lets compare these two commands, because in some cases WRITE SAME 10 command does not work.
 
@@ -225,7 +225,7 @@ In our situation, the disks have constantly sector size 512 and this value depen
 
 If many data go with one command through the controller, it can make the erasure process slower because the cache of the controller will be full of messages, waiting in the queue. We should influence on the erasure speed by this parameter and find the optimal value during testing. Blancco software has transfer length 256, which means that we send 128 kB at once. We can calculate how many commands we need to erase one 18.2 GB disk by WRITE 10 command with 128 KB buffer:
 \begin{equation}
-	m_{11}=\frac{F_{1}}{c_{2}}=\frac{18.2GB}{128kB}=\frac{18636.8MB}{0.125MB}=149094.4
+	m_{11}=\frac{d_{1}}{buffer~length}=\frac{18.2GB}{128kB}=\frac{18636.8MB}{0.125MB}=149094.4
 \end{equation}
 The derived value is 256 times bigger than the amount of commands that we need to send for erasure by WRITE SAME command. It is obvious, because the current value of buffer length is 256 bigger. In the Chapter \ref{chap4:title}, we will see the results of erasure testing with different transfer lengths.
 
